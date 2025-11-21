@@ -1,12 +1,13 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 using WindowsFormsApp1.Enums;
 using WindowsFormsApp1.IntermediaryClasses;
 using WindowsFormsApp1.Models;
-using System.ComponentModel;
-using System.Reflection;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp1.Forms
 {
@@ -15,6 +16,7 @@ namespace WindowsFormsApp1.Forms
         ExamScheduleInterMediarycs examIM = new ExamScheduleInterMediarycs();
         RoomIntermediary roomIM = new RoomIntermediary();
         InvigilatorIntermediary invIM = new InvigilatorIntermediary();
+        CoursesIntermediary coursesIM = new CoursesIntermediary();
 
         int SelectedExamID = 0;
         int BaseDuration = 2; // default 2 hours
@@ -33,67 +35,67 @@ namespace WindowsFormsApp1.Forms
 
             grpSpecial.Enabled = false;
 
-            cmbExamList.SelectedIndexChanged += cmbExamList_SelectedIndexChanged;
-            cmbRoom.SelectedIndexChanged += cmbRoom_SelectedIndexChanged;
+            ExamListComboBox.SelectedIndexChanged += cmbExamList_SelectedIndexChanged;
+            RoomComboBox.SelectedIndexChanged += cmbRoom_SelectedIndexChanged;
             chkSpecial.CheckedChanged += chkSpecial_CheckedChanged;
         }
 
-        // ===============================================
-        // LOAD DATA
-        // ===============================================
-
+        // load exam list
         private void LoadExamList()
         {
             DataTable dt = examIM.SelectExams();
           
-            cmbExamList.DisplayMember = "ExamID";
-            cmbExamList.ValueMember = "ExamID";
-            cmbExamList.DataSource = dt;
+            ExamListComboBox.DisplayMember = "ExamTitle";
+            ExamListComboBox.ValueMember = "ExamID";
+            ExamListComboBox.DataSource = dt;
 
         }
 
         private void LoadCourses()
         {
-            cmbCourse.DataSource = Enum.GetValues(typeof(EnumData))
-                .Cast<EnumData>()
-                .Select(e => new
-                {
-                    Value = e,
-                    Text = GetDescription(e)
-                })
-                .ToList();
+            //CourseComboBox.DataSource = Enum.GetValues(typeof(EnumData))
+            //    .Cast<EnumData>()
+            //    .Select(e => new
+            //    {
+            //        Value = e,
+            //        Text = GetDescription(e)
+            //    })
+            //    .ToList();
 
-            cmbCourse.DisplayMember = "Text";
-            cmbCourse.ValueMember = "Value";
+            //CourseComboBox.DisplayMember = "Text";
+            //CourseComboBox.ValueMember = "Value";
+            DataTable dt = coursesIM.ListCourses();
+          
+             CourseComboBox.DisplayMember = "CourseName";
+            CourseComboBox.ValueMember = "CourseID";
+            CourseComboBox.DataSource = dt;
         }
 
         private void LoadRooms()
         {
             DataTable dt = roomIM.ListRooms();
-            cmbRoom.DisplayMember = "RoomName";
-            cmbRoom.ValueMember = "RoomID";
-            cmbRoom.DataSource = dt;
+            RoomComboBox.DisplayMember = "RoomName";
+            RoomComboBox.ValueMember = "RoomID";
+            RoomComboBox.DataSource = dt;
         }
 
         private void LoadInvigilators()
         {
             DataTable dt = invIM.GetAllInvigilators();
-            cmbInvigilator.DisplayMember = "Name";
-            cmbInvigilator.ValueMember = "InvigilatorID";
-            cmbInvigilator.DataSource = dt;
+            InvigilatorComboBox.DisplayMember = "Name";
+            InvigilatorComboBox.ValueMember = "InvigilatorID";
+            InvigilatorComboBox.DataSource = dt;
         }
 
 
-        // ===============================================
-        // LOAD SELECTED EXAM DETAILS  ⭐ CORE FUNCTION
-        // ===============================================
+// on change of combo box
 
         private void cmbExamList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbExamList.SelectedValue == null || cmbExamList.SelectedIndex == -1)
+            if (ExamListComboBox.SelectedValue == null || ExamListComboBox.SelectedIndex == -1)
                 return;
 
-            SelectedExamID = Convert.ToInt32(cmbExamList.SelectedValue);
+            SelectedExamID = Convert.ToInt32(ExamListComboBox.SelectedValue);
 
             DataRow row = examIM.GetExamById(SelectedExamID);
             if (row == null)
@@ -102,55 +104,55 @@ namespace WindowsFormsApp1.Forms
                 return;
             }
 
-            // ⭐ FIXED — check column exists
-            int courseId = Convert.ToInt32(row["CourseID"]);
-            EnumData courseEnum = (EnumData)courseId;
-            cmbCourse.SelectedValue = EnumHelper.GetDescription(courseEnum);
-           
-            cmbRoom.SelectedValue = Convert.ToInt32(row["RoomID"]);
-            cmbInvigilator.SelectedValue = Convert.ToInt32(row["InvigilatorID"]);
+            CourseComboBox.SelectedValue = Convert.ToInt32(row["CourseID"]);
 
-            // ⭐ FIXED — some DBs store date & time as separate fields
+            RoomComboBox.SelectedValue = Convert.ToInt32(row["RoomID"]);
+            InvigilatorComboBox.SelectedValue = Convert.ToInt32(row["InvigilatorID"]);
+
             DateTime date = Convert.ToDateTime(row["ExamDate"]);
             TimeSpan startTime = (TimeSpan)row["ExamStartTime"];
-            dtExam.Value = date.Add(startTime);
+            TimeSpan endTime = (TimeSpan)row["ExamEndTime"];
+            // MessageBox.Show(startTime.ToString());
+            ExamDateTime.Value = date;
+           
+            DateTime combinedStartDateTime = date.Date + startTime;
+            StartTimedateTimePicker.Value = combinedStartDateTime;
+            StartTimedateTimePicker.Value = ExamDateTime.Value.Date + startTime;
 
-            // ⭐ FIXED — check column exists before reading
+            DateTime combinedEndDateTime = date.Date + endTime;
+            EndTimeDateTimePicker.Value = combinedEndDateTime;
+            EndTimeDateTimePicker.Value = ExamDateTime.Value.Date + endTime;
+
+
+            // check column exists before reading
             chkSpecial.Checked = row.Table.Columns.Contains("SpecialNeeds")
                 ? Convert.ToBoolean(row["SpecialNeeds"])
                 : false;
 
-            txtStudentName.Text = row.Table.Columns.Contains("SpecialStudentName")
+            StudentNameTextBox.Text = row.Table.Columns.Contains("SpecialStudentName")
                 ? row["SpecialStudentName"].ToString()
                 : "";
 
-            txtExtraHours.Text = row.Table.Columns.Contains("ExtraHours")
+            ExtraHoursTextBox.Text = row.Table.Columns.Contains("ExtraHours")
                 ? row["ExtraHours"].ToString()
                 : "0";
 
             grpSpecial.Enabled = chkSpecial.Checked;
-
             UpdateDuration();
         }
 
 
-        // ===============================================
-        // ROOM CAPACITY AUTO UPDATE
-        // ===============================================
-
+         //auto load of room capacity
         private void cmbRoom_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbRoom.SelectedValue != null)
+            if (RoomComboBox.SelectedValue != null)
             {
-                int roomId = Convert.ToInt32(cmbRoom.SelectedValue);
+                int roomId = Convert.ToInt32(RoomComboBox.SelectedValue);
                 txtCapacity.Text = roomIM.GetRoomCapacity(roomId).ToString();
             }
         }
 
-
-        // ===============================================
-        // SPECIAL PERMISSION TOGGLE
-        // ===============================================
+        //check for spl permission
 
         private void chkSpecial_CheckedChanged(object sender, EventArgs e)
         {
@@ -158,28 +160,24 @@ namespace WindowsFormsApp1.Forms
 
             if (!chkSpecial.Checked)
             {
-                txtStudentName.Clear();
-                txtExtraHours.Clear();
+                StudentNameTextBox.Clear();
+                ExtraHoursTextBox.Clear();
             }
         }
 
 
-        // ===============================================
-        // UPDATE DURATION
-        // ===============================================
+        //calculate the total hpurs for exam
 
         private void UpdateDuration()
         {
             int extra = 0;
-            int.TryParse(txtExtraHours.Text, out extra);
+            int.TryParse(ExtraHoursTextBox.Text, out extra);
 
             lblDuration.Text = $"{BaseDuration + extra} Hours";
         }
 
 
-        // ===============================================
-        // UPDATE EXAM  ⭐ IMPORTANT
-        // ===============================================
+    // update the exam data
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -189,20 +187,20 @@ namespace WindowsFormsApp1.Forms
                 return;
             }
 
-            int extraHours = chkSpecial.Checked ? int.Parse(txtExtraHours.Text) : 0;
+            int extraHours = chkSpecial.Checked ? int.Parse(ExtraHoursTextBox.Text) : 0;
 
             Exam exam = new Exam
             {
-               // CourseID = cmbCourse.SelectedValue, // ⭐ FIXED
-                RoomID = Convert.ToInt32(cmbRoom.SelectedValue),
-                InvigilatorID = Convert.ToInt32(cmbInvigilator.SelectedValue),
-                ExamDateTime = dtExam.Value,
+               // CourseID = cmbCourse.SelectedValue, 
+                RoomID = Convert.ToInt32(RoomComboBox.SelectedValue),
+                InvigilatorID = Convert.ToInt32(InvigilatorComboBox.SelectedValue),
+                ExamDateTime = ExamDateTime.Value,
                 ExamStartTime = StartTimedateTimePicker.Value,
                 ExamEndTime = EndTimeDateTimePicker.Value,
                 DurationMinutes = (BaseDuration + extraHours) * 60,
-
+                CourseID = Convert.ToInt32(CourseComboBox.SelectedValue),
                 SpecialPermission = chkSpecial.Checked,
-                SpecialStudentName = chkSpecial.Checked ? txtStudentName.Text.Trim() : null,
+                SpecialStudentName = chkSpecial.Checked ? StudentNameTextBox.Text.Trim() : null,
                 ExtraHours = extraHours
             };
 
@@ -221,9 +219,7 @@ namespace WindowsFormsApp1.Forms
         }
 
 
-        // ===============================================
-        // ENUM DESCRIPTION HELPER
-        // ===============================================
+       //description helper
 
         public static string GetDescription(Enum value)
         {
@@ -235,6 +231,11 @@ namespace WindowsFormsApp1.Forms
         private void lblDuration_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

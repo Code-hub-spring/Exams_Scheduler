@@ -54,20 +54,20 @@ namespace WindowsFormsApp1
         }
 
         // 1) Courses from Enum
-        private void LoadCoursesFromEnum()
-        {
-            CourseComboBox.DataSource = Enum.GetValues(typeof(EnumData))
-                                    .Cast<EnumData>()
-                                    .Select(v => new
-                                    {
-                                        Value = v,
-                                        Text = EnumHelper.GetDescription(v)
-                                    })
-                                    .ToList();
+        //private void LoadCoursesFromEnum()
+        //{
+        //    CourseComboBox.DataSource = Enum.GetValues(typeof(EnumData))
+        //                            .Cast<EnumData>()
+        //                            .Select(v => new
+        //                            {
+        //                                Value = v,
+        //                                Text = EnumHelper.GetDescription(v)
+        //                            })
+        //                            .ToList();
 
-            CourseComboBox.DisplayMember = "Text";  
-            CourseComboBox.ValueMember = "Value";
-        }
+        //    CourseComboBox.DisplayMember = "Text";  
+        //    CourseComboBox.ValueMember = "Value";
+        //}
 
         private void LoadCourseFromDB()
         {

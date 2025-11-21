@@ -13,7 +13,6 @@ namespace WindowsFormsApp1.IntermediaryClasses
 {
     internal class ExamScheduleInterMediarycs
     {
-
             public string LastError { get; set; }
 
            //  SELECT ALL EXAMS
@@ -105,7 +104,10 @@ namespace WindowsFormsApp1.IntermediaryClasses
                      RoomID = @RoomID,
                      InvigilatorID = @InvigilatorID,
                      ExamDate = @ExamDate,
-                     ExamTime = @ExamTime,
+                     ExamStartTime = @ExamStartTime,
+                     ExamEndTime = @ExamEndTime,
+                     SpecialStudentName= @SpecialStudentName,
+                        ExtraHours = @ExtraHours,
                      DurationMinutes = @DurationMinutes,
                      SpecialNeeds = @SpecialNeeds
                      WHERE ExamID = @ExamID";
@@ -115,15 +117,19 @@ namespace WindowsFormsApp1.IntermediaryClasses
             SqlParameter p2 = new SqlParameter("@RoomID", exam.RoomID);
             SqlParameter p3 = new SqlParameter("@InvigilatorID", exam.InvigilatorID);
             SqlParameter p4 = new SqlParameter("@ExamDate", exam.ExamDateTime.Date);
-            SqlParameter p5 = new SqlParameter("@ExamTime", exam.ExamDateTime.TimeOfDay);
+            SqlParameter p5 = new SqlParameter("@ExamStartTime", exam.ExamStartTime.TimeOfDay);
             SqlParameter p6 = new SqlParameter("@DurationMinutes", exam.DurationMinutes);
             SqlParameter p7 = new SqlParameter("@SpecialNeeds", exam.SpecialPermission);
             SqlParameter p8 = new SqlParameter("@ExamID", examID);
+            SqlParameter p9 =new SqlParameter("@ExamEndTime", exam.ExamEndTime.TimeOfDay);
+            SqlParameter p10 = new SqlParameter("@SpecialStudentName", exam.SpecialStudentName ?? (object)DBNull.Value);
+            SqlParameter p11 = new SqlParameter("@ExtraHours", exam.ExtraHours);    
+
 
             try
             {
                 // FIX → pass parameters individually
-                return db.ExecNonQuery(query, CommandType.Text, p1, p2, p3, p4, p5, p6, p7, p8);
+                return db.ExecNonQuery(query, CommandType.Text, p1, p2, p3, p4, p5, p6, p7, p8,p9,p10,p11);
             }
             catch (Exception ex)
             {
@@ -132,9 +138,7 @@ namespace WindowsFormsApp1.IntermediaryClasses
             }
         }
 
-        // ==========================================
-        //  DELETE EXAM
-        // ==========================================
+     // Delete exam
         public int DeleteExam(int examID)
             {
                 ExamScheduleDataClass db = new ExamScheduleDataClass();
@@ -168,7 +172,8 @@ namespace WindowsFormsApp1.IntermediaryClasses
                i.Name,
                e.ExamDate,
                e.SpecialNeeds,
-               e.SpecialStudentName, 
+               e.SpecialStudentName,
+               e.ExtraHours,
                e.ExamStartTime,
                e.ExamEndTime
         FROM Exams e
@@ -187,7 +192,7 @@ namespace WindowsFormsApp1.IntermediaryClasses
         public DataTable SelectExamIDs()
         {
             ExamScheduleDataClass db = new ExamScheduleDataClass();
-            string q = "SELECT ExamID FROM Exams ORDER BY ExamID DESC";
+            string q = "SELECT ExamID,ExamTitle FROM Exams ORDER BY ExamID DESC";
             return db.GetTable(q, CommandType.Text);
         }
     }
