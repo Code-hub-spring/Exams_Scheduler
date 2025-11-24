@@ -41,7 +41,6 @@ namespace WindowsFormsApp1.IntermediaryClasses
                 return null;
             }
         }
-
         // Add Room
         public int AddRoom(int roomNumber, string roomName, int roomCapacity)
         {
@@ -69,31 +68,25 @@ namespace WindowsFormsApp1.IntermediaryClasses
                 return -1;
             }
         }//end AddRoom()
-
         //get room capacity
         public int GetRoomCapacity(int roomId)
         {
             ExamScheduleDataClass db = new ExamScheduleDataClass();
             string q = "SELECT Capacity FROM Rooms WHERE RoomID = @RoomID";
-
             SqlParameter p = new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomId };
-
             object result = db.ExecScalarQuery(q, CommandType.Text, p);
             return result == null ? 0 : Convert.ToInt32(result);
         }
-
         // Mark room availability (requires Rooms.Available BIT column)
         public int UpdateRoomAvailability(int roomId, bool available)
         {
             ExamScheduleDataClass db = new ExamScheduleDataClass();
             string q = "UPDATE Rooms SET Available = @Available WHERE RoomID = @RoomID";
-
             SqlParameter p1 = new SqlParameter("@Available", SqlDbType.Bit) { Value = available };
             SqlParameter p2 = new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomId };
 
             return db.ExecNonQuery(q, CommandType.Text, p1, p2);
         }
-
         public int RemoveRoom(int roomNumber)
         {
             throw new NotImplementedException();

@@ -23,6 +23,9 @@ namespace WindowsFormsApp1
         private void MainDashboard_Load(object sender, EventArgs e)
         {
             //display view exam room detils
+            ViewExamScheduleDetailsForm viewExamScheduleDetailsForm = ViewExamScheduleDetailsForm.GetViewExamScheduleDetailsFormInstance();
+            viewExamScheduleDetailsForm.MdiParent = this;
+            viewExamScheduleDetailsForm.Show();
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,7 +69,7 @@ namespace WindowsFormsApp1
             //should call static method to create instance
             ViewExamScheduleDetailsForm viewExamScheduleDetailsForm = ViewExamScheduleDetailsForm.GetViewExamScheduleDetailsFormInstance();
             viewExamScheduleDetailsForm.MdiParent= this;
-            viewExamScheduleDetailsForm.Show();
+             viewExamScheduleDetailsForm.Show();
         }
 
         private void addExamRoomToolStripMenuItem_Click(object sender, EventArgs e)
@@ -104,7 +107,7 @@ namespace WindowsFormsApp1
 
         private void viewInvigilatorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.CloseOpenedForms();
             ViewInvigilatorForm viewInvigilator=new ViewInvigilatorForm();
             viewInvigilator.MdiParent= this;
             viewInvigilator.Show();
@@ -112,6 +115,7 @@ namespace WindowsFormsApp1
 
         private void viewExamRoomsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.CloseOpenedForms();
             ViewExamRoomForm viewExamRoom=new ViewExamRoomForm();
             viewExamRoom.MdiParent= this;
             viewExamRoom.Show();

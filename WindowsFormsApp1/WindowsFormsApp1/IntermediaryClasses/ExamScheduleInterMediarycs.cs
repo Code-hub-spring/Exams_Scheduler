@@ -156,7 +156,6 @@ internal class ExamScheduleInterMediarycs : IExamScheduleIntermediary
         
     }
 
-   
 
     // SELECT EXAM IDS
     public DataTable SelectExamIDs()

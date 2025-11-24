@@ -207,6 +207,7 @@
             this.chkSpecial.TabIndex = 6;
             this.chkSpecial.Text = "Special Permission?";
             this.chkSpecial.UseVisualStyleBackColor = true;
+            this.chkSpecial.CheckedChanged += new System.EventHandler(this.StartTimedateTimePicker_ValueChanged);
             // 
             // grpSpecial
             // 
@@ -227,6 +228,7 @@
             this.ExtraHoursTextBox.Name = "ExtraHoursTextBox";
             this.ExtraHoursTextBox.Size = new System.Drawing.Size(100, 22);
             this.ExtraHoursTextBox.TabIndex = 3;
+            this.ExtraHoursTextBox.TextChanged += new System.EventHandler(this.StartTimedateTimePicker_ValueChanged);
             // 
             // lblExtraHours
             // 

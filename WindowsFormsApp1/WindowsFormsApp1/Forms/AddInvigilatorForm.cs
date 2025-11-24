@@ -39,35 +39,47 @@ namespace WindowsFormsApp1
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(InvigilatorTextBox.Text))
+                if(InvigilatorTextBox.Text!="")
                 {
-                    MessageBox.Show("Please enter the Invigilator Name.",
-                        "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                if (string.IsNullOrWhiteSpace(InvigilatorEmpIdTextBox.Text))
-                {
-                    MessageBox.Show("Please enter the Invigilator Emp Id.",
+                    if(InvigilatorEmpIdTextBox.Text!="")
+                    {
+                        if (IsAvailableCheckBox.Checked)
+                        {
+                            string name = InvigilatorTextBox.Text.Trim();
+                            bool isAvailable = IsAvailableCheckBox.Checked;
+                            string empId = InvigilatorEmpIdTextBox.Text.Trim();
+                            int result = invigilatorIntermediary.InsertInvigilator(name, isAvailable, empId);
+                            if (result > 0)
+                            {
+                                MessageBox.Show("Invigilator Added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ClearForm();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error: " + invigilatorIntermediary.LastError,
+                                    "Insert Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Invigilator must be marked as available.",
+                           "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter the Invigilator Emp Id.",
                        "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                string name = InvigilatorTextBox.Text.Trim();
-                bool isAvailable = IsAvailableCheckBox.Checked;
-                string empId = InvigilatorEmpIdTextBox.Text.Trim();
-
-                //call query function
-                int result = invigilatorIntermediary.InsertInvigilator(name, isAvailable,empId);
-                if (result > 0)
-                {
-                    MessageBox.Show("Invigilator Added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearForm();
+                        return;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error: " + invigilatorIntermediary.LastError,
-                        "Insert Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please enter the Invigilator Name.",
+                      "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-
             }
             catch(Exception ex)
             {

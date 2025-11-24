@@ -38,43 +38,51 @@ namespace WindowsFormsApp1
             {
                 string roomName = RoomNameTextBox.Text.Trim();
                 // VALIDATION
-                if (string.IsNullOrWhiteSpace(RoomNumTextBox.Text) ||
-                    string.IsNullOrWhiteSpace(RoomCapacityTextBox.Text))
+                if (RoomNumTextBox.Text!="")
                 {
-                    MessageBox.Show("Please enter valid details for both fields.", "Validation Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                if (!int.TryParse(RoomNumTextBox.Text, out int roomNumber))
-                {
-                    MessageBox.Show("Room Number must be a valid number.");
-                    return;
-                }
-
-                if(roomName == "")
-                {
-                    MessageBox.Show("Room Name cannot be string");
-                }
-                if (!int.TryParse(RoomCapacityTextBox.Text, out int roomCapacity))
-                {
-                    MessageBox.Show("Room Capacity must be a valid number.");
-                    return;
-                }
-
-                // CALL INTERMEDIARY CLASS
-                int result = roomIntermediary.AddRoom(roomNumber, roomName, roomCapacity);
-
-                if (result > 0)
-                {
-                    MessageBox.Show("Room added successfully!");
-                    ClearForm();
+                    if(int.TryParse(RoomNumTextBox.Text, out int roomNumber))
+                    {
+                        if (roomName != "")
+                        {
+                            if (int.TryParse(RoomCapacityTextBox.Text, out int roomCapacity))
+                            {
+                                // CALL INTERMEDIARY CLASS
+                                int result = roomIntermediary.AddRoom(roomNumber, roomName, roomCapacity);
+                                if (result > 0)
+                                {
+                                    MessageBox.Show("Room added successfully!");
+                                    ClearForm();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error: " + roomIntermediary.LastError);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Room Capacity must be a valid number.");
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Room Name cannot be empty.");
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Room Number must be a valid number.");
+                        return;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error: " + roomIntermediary.LastError);
+                    MessageBox.Show("Please enter Room Number.", "Validation Error",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
                 }
-            }
+           }
             catch (Exception ex)
             {
                 MessageBox.Show("Something went wrong: " + ex.Message);

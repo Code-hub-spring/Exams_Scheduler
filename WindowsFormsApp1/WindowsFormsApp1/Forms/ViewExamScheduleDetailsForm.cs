@@ -18,7 +18,6 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
-
         internal static ViewExamScheduleDetailsForm GetViewExamScheduleDetailsFormInstance()
         {
             //This method returns an instance of ViewExamScheduleDetailsForm, only if the instance is null.
@@ -33,9 +32,7 @@ namespace WindowsFormsApp1
             try
             {
                 ExamScheduleInterMediarycs examScheduleInterMediarycs = new ExamScheduleInterMediarycs();
-
                 DataTable dt = examScheduleInterMediarycs.SelectExams();
-
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     ExamScheduleDataGridView.DataSource = dt;

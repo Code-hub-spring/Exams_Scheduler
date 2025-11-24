@@ -34,19 +34,19 @@
             // 
             // ExamScheduleDataGridView
             // 
-            this.ExamScheduleDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ExamScheduleDataGridView.ColumnHeadersHeight = 29;
             this.ExamScheduleDataGridView.Location = new System.Drawing.Point(12, 22);
             this.ExamScheduleDataGridView.Name = "ExamScheduleDataGridView";
             this.ExamScheduleDataGridView.RowHeadersWidth = 51;
             this.ExamScheduleDataGridView.RowTemplate.Height = 24;
-            this.ExamScheduleDataGridView.Size = new System.Drawing.Size(776, 416);
+            this.ExamScheduleDataGridView.Size = new System.Drawing.Size(938, 536);
             this.ExamScheduleDataGridView.TabIndex = 0;
             // 
             // ViewExamScheduleDetailsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(982, 753);
             this.Controls.Add(this.ExamScheduleDataGridView);
             this.Name = "ViewExamScheduleDetailsForm";
             this.Text = "ViewExamScheduleDetailsForm";

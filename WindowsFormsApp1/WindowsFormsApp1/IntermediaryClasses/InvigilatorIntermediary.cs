@@ -65,6 +65,5 @@ namespace WindowsFormsApp1.IntermediaryClasses
 
             return db.ExecNonQuery(q, CommandType.Text, p1, p2);
         }
-
     }
 }
