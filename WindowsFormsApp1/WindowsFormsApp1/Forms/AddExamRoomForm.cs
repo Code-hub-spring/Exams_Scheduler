@@ -6,13 +6,28 @@ namespace WindowsFormsApp1
 {
     public partial class AddExamRoomForm : Form
     {
+        internal static AddExamRoomForm addExamRoomInstance;
         RoomIntermediary roomIntermediary = new RoomIntermediary();
 
         public AddExamRoomForm()
         {
             InitializeComponent();
         }
-
+        internal static AddExamRoomForm GetAddExamRoomFormInstance()
+        {
+            //This method returns an instance of AddExamRoomForm, only if the instance is null.
+            if (addExamRoomInstance == null)
+            {
+                addExamRoomInstance = new AddExamRoomForm();
+            }
+            return addExamRoomInstance;
+        }
+        private void AddExamRoomFormClosing(object sender, FormClosingEventArgs e)
+        {
+            //When the form closes, make the instance null, so the form loads again when called the second time.
+            addExamRoomInstance = null;
+        } //AddExamRoomFormClosing() end
+         
         private void AddExamRoomForm_Load(object sender, EventArgs e)
         {
         }

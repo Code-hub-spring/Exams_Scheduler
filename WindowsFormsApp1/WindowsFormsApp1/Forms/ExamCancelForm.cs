@@ -11,12 +11,23 @@ namespace WindowsFormsApp1.Forms
         ExamScheduleInterMediarycs examIM = new ExamScheduleInterMediarycs();
         RoomIntermediary roomIM = new RoomIntermediary();
         InvigilatorIntermediary invIM = new InvigilatorIntermediary();
+        internal static ExamCancelForm instance;
 
         public ExamCancelForm()
         {
             InitializeComponent();
         }
 
+
+        internal static ExamCancelForm GetExamCancelFormInstance()
+        {
+            //This method returns an instance of ExamCancelForm, only if the instance is null.
+            if (instance == null)
+            {
+                instance = new ExamCancelForm();
+            }
+            return instance;
+        }
         private void ExamCancelForm_Load(object sender, EventArgs e)
         {
             LoadExamIDs();
@@ -48,7 +59,7 @@ namespace WindowsFormsApp1.Forms
                 //CourseNameTextBox.Text = EnumHelper.GetDescription(courseEnum);
                 CourseNameTextBox.Text = exam["CourseName"].ToString();
                 RoomNameTextBox.Text = exam["RoomName"].ToString();
-                InvigilatorNameTextBox.Text = exam["Name"].ToString();
+                InvigilatorNameTextBox.Text = exam["InvigilatorName"].ToString();
 
                 ExamDateTextBox.Text = Convert.ToDateTime(exam["ExamDate"]).ToString("yyyy-MM-dd");
 
@@ -69,7 +80,6 @@ namespace WindowsFormsApp1.Forms
             int examId = Convert.ToInt32(ExamIdComboBox.SelectedValue);
             DataRow exam = examIM.GetExamById(examId);
            
-
             if (exam == null)
             {
                 MessageBox.Show("Cannot fetch exam details.", "Error");
@@ -79,16 +89,12 @@ namespace WindowsFormsApp1.Forms
             int roomId = Convert.ToInt32(exam["RoomID"]);
             int invId = Convert.ToInt32(exam["InvigilatorID"]);
 
-            // DELETE
-            int result = examIM.DeleteExam(examId);
-
-            if (result > 0)
+            // Call DeleteExam method which calls the stored procedure
+            int result = examIM.DeleteExam(examId, roomId, invId);
+            MessageBox.Show(result.ToString(), "shxjs");
+            if (result >= 0)
             {
-                roomIM.UpdateRoomAvailability(roomId, true);
-                invIM.UpdateInvigilatorAvailability(invId, true);
-
                 MessageBox.Show("Exam cancelled successfully!", "Success");
-
                 ClearForm();
                 LoadExamIDs();
             }

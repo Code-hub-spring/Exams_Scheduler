@@ -2,10 +2,11 @@
 using System.Data;
 using System.Data.SqlClient;
 using WindowsFormsApp1.DataClasses;
+using WindowsFormsApp1.Interfaces;
 
 namespace WindowsFormsApp1.IntermediaryClasses
 {
-    public class RoomIntermediary
+    public class RoomIntermediary : IRoomIntermediary
     {
         public string LastError { get; set; }
 
@@ -93,5 +94,9 @@ namespace WindowsFormsApp1.IntermediaryClasses
             return db.ExecNonQuery(q, CommandType.Text, p1, p2);
         }
 
+        public int RemoveRoom(int roomNumber)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

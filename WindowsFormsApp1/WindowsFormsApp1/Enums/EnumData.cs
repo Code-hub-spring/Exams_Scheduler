@@ -7,25 +7,21 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Enums
 {
-   
-        public enum EnumData
+    public enum ExamType
     {
-        [Description("Computer & Information System")]
-        ComputerAndInformationSystem = 0,
-
-        [Description("Computer Science")]
-        ComputerScience = 1,
-
-        [Description("Data Science")]
-        DataScience = 2,
-
-        [Description("Industrial Production")]
-        IndustrialProduction = 3,
-
-        [Description("Management & Security System")]
-        ManagementAndSecuritySystem = 4
-
+        MidTerm,
+        Final,
+        Special,
+        Retake
+     
     }
+    // exam status enum
+    //public enum ExamStatus
+    //{
+    //    Scheduled,
+    //    Completed,
+    //    Canceled,
+    //    Postponed
+    //}
 
-    
 }

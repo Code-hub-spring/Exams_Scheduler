@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.DataClasses;
+using WindowsFormsApp1.Interfaces;
 
 namespace WindowsFormsApp1.IntermediaryClasses
 {
-    internal class InvigilatorIntermediary
+    internal class InvigilatorIntermediary : IInvigilatorIntermediary
     {
         public string LastError {  get; set; }
 

@@ -19,8 +19,6 @@
             {
             this.lblSelectExam = new System.Windows.Forms.Label();
             this.ExamListComboBox = new System.Windows.Forms.ComboBox();
-            this.grpCourse = new System.Windows.Forms.GroupBox();
-            this.CourseComboBox = new System.Windows.Forms.ComboBox();
             this.grpRoom = new System.Windows.Forms.GroupBox();
             this.txtCapacity = new System.Windows.Forms.TextBox();
             this.lblCapacity = new System.Windows.Forms.Label();
@@ -43,13 +41,19 @@
             this.lblDuration = new System.Windows.Forms.Label();
             this.labelDurationText = new System.Windows.Forms.Label();
             this.UpdateButton = new System.Windows.Forms.Button();
-            this.ClearButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.grpCourse.SuspendLayout();
+            this.label3 = new System.Windows.Forms.Label();
+            this.CourseComboBox = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.RetakeRadioButton = new System.Windows.Forms.RadioButton();
+            this.SpecialRadioButton = new System.Windows.Forms.RadioButton();
+            this.FinalRadioButton = new System.Windows.Forms.RadioButton();
+            this.MidTermRadioButton = new System.Windows.Forms.RadioButton();
             this.grpRoom.SuspendLayout();
             this.grpInvigilator.SuspendLayout();
             this.grpDateTime.SuspendLayout();
             this.grpSpecial.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblSelectExam
@@ -69,24 +73,6 @@
             this.ExamListComboBox.Size = new System.Drawing.Size(250, 24);
             this.ExamListComboBox.TabIndex = 1;
             this.ExamListComboBox.SelectedIndexChanged += new System.EventHandler(this.cmbExamList_SelectedIndexChanged);
-            // 
-            // grpCourse
-            // 
-            this.grpCourse.Controls.Add(this.CourseComboBox);
-            this.grpCourse.Location = new System.Drawing.Point(30, 70);
-            this.grpCourse.Name = "grpCourse";
-            this.grpCourse.Size = new System.Drawing.Size(450, 70);
-            this.grpCourse.TabIndex = 2;
-            this.grpCourse.TabStop = false;
-            this.grpCourse.Text = "Course Information";
-            // 
-            // CourseComboBox
-            // 
-            this.CourseComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CourseComboBox.Location = new System.Drawing.Point(20, 30);
-            this.CourseComboBox.Name = "CourseComboBox";
-            this.CourseComboBox.Size = new System.Drawing.Size(400, 24);
-            this.CourseComboBox.TabIndex = 0;
             // 
             // grpRoom
             // 
@@ -174,6 +160,7 @@
             this.EndTimeDateTimePicker.Name = "EndTimeDateTimePicker";
             this.EndTimeDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.EndTimeDateTimePicker.TabIndex = 4;
+            this.EndTimeDateTimePicker.ValueChanged += new System.EventHandler(this.StartTimedateTimePicker_ValueChanged);
             // 
             // label2
             // 
@@ -191,6 +178,7 @@
             this.StartTimedateTimePicker.Name = "StartTimedateTimePicker";
             this.StartTimedateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.StartTimedateTimePicker.TabIndex = 2;
+            this.StartTimedateTimePicker.ValueChanged += new System.EventHandler(this.StartTimedateTimePicker_ValueChanged);
             // 
             // label1
             // 
@@ -273,7 +261,6 @@
             this.lblDuration.Size = new System.Drawing.Size(53, 16);
             this.lblDuration.TabIndex = 9;
             this.lblDuration.Text = "0 Hours";
-            this.lblDuration.Click += new System.EventHandler(this.lblDuration_Click);
             // 
             // labelDurationText
             // 
@@ -294,19 +281,9 @@
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // ClearButton
-            // 
-            this.ClearButton.Location = new System.Drawing.Point(160, 680);
-            this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(110, 30);
-            this.ClearButton.TabIndex = 11;
-            this.ClearButton.Text = "Clear";
-            this.ClearButton.UseVisualStyleBackColor = true;
-            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
-            // 
             // CancelButton
             // 
-            this.CancelButton.Location = new System.Drawing.Point(290, 680);
+            this.CancelButton.Location = new System.Drawing.Point(183, 680);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(110, 30);
             this.CancelButton.TabIndex = 12;
@@ -314,11 +291,91 @@
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(39, 120);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 16);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Course Name";
+            // 
+            // CourseComboBox
+            // 
+            this.CourseComboBox.FormattingEnabled = true;
+            this.CourseComboBox.Location = new System.Drawing.Point(150, 120);
+            this.CourseComboBox.Name = "CourseComboBox";
+            this.CourseComboBox.Size = new System.Drawing.Size(244, 24);
+            this.CourseComboBox.TabIndex = 14;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.RetakeRadioButton);
+            this.groupBox1.Controls.Add(this.SpecialRadioButton);
+            this.groupBox1.Controls.Add(this.FinalRadioButton);
+            this.groupBox1.Controls.Add(this.MidTermRadioButton);
+            this.groupBox1.Location = new System.Drawing.Point(34, 60);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(634, 54);
+            this.groupBox1.TabIndex = 15;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Exam Type";
+            // 
+            // RetakeRadioButton
+            // 
+            this.RetakeRadioButton.AutoSize = true;
+            this.RetakeRadioButton.Location = new System.Drawing.Point(420, 20);
+            this.RetakeRadioButton.Name = "RetakeRadioButton";
+            this.RetakeRadioButton.Size = new System.Drawing.Size(82, 20);
+            this.RetakeRadioButton.TabIndex = 0;
+            this.RetakeRadioButton.TabStop = true;
+            this.RetakeRadioButton.Text = "Re-Take";
+            this.RetakeRadioButton.UseVisualStyleBackColor = true;
+            this.RetakeRadioButton.CheckedChanged += new System.EventHandler(this.MidTermRadioButton_CheckedChanged);
+            // 
+            // SpecialRadioButton
+            // 
+            this.SpecialRadioButton.AutoSize = true;
+            this.SpecialRadioButton.Location = new System.Drawing.Point(277, 20);
+            this.SpecialRadioButton.Name = "SpecialRadioButton";
+            this.SpecialRadioButton.Size = new System.Drawing.Size(74, 20);
+            this.SpecialRadioButton.TabIndex = 0;
+            this.SpecialRadioButton.TabStop = true;
+            this.SpecialRadioButton.Text = "Special";
+            this.SpecialRadioButton.UseVisualStyleBackColor = true;
+            this.SpecialRadioButton.CheckedChanged += new System.EventHandler(this.MidTermRadioButton_CheckedChanged);
+            // 
+            // FinalRadioButton
+            // 
+            this.FinalRadioButton.AutoSize = true;
+            this.FinalRadioButton.Location = new System.Drawing.Point(149, 21);
+            this.FinalRadioButton.Name = "FinalRadioButton";
+            this.FinalRadioButton.Size = new System.Drawing.Size(57, 20);
+            this.FinalRadioButton.TabIndex = 0;
+            this.FinalRadioButton.TabStop = true;
+            this.FinalRadioButton.Text = "Final";
+            this.FinalRadioButton.UseVisualStyleBackColor = true;
+            this.FinalRadioButton.CheckedChanged += new System.EventHandler(this.MidTermRadioButton_CheckedChanged);
+            // 
+            // MidTermRadioButton
+            // 
+            this.MidTermRadioButton.AutoSize = true;
+            this.MidTermRadioButton.Location = new System.Drawing.Point(13, 20);
+            this.MidTermRadioButton.Name = "MidTermRadioButton";
+            this.MidTermRadioButton.Size = new System.Drawing.Size(85, 20);
+            this.MidTermRadioButton.TabIndex = 0;
+            this.MidTermRadioButton.TabStop = true;
+            this.MidTermRadioButton.Text = "Mid Term";
+            this.MidTermRadioButton.UseVisualStyleBackColor = true;
+            this.MidTermRadioButton.CheckedChanged += new System.EventHandler(this.MidTermRadioButton_CheckedChanged);
+            // 
             // EditExamForm
             // 
             this.ClientSize = new System.Drawing.Size(729, 752);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.CourseComboBox);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.CancelButton);
-            this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.lblDuration);
             this.Controls.Add(this.labelDurationText);
@@ -327,13 +384,11 @@
             this.Controls.Add(this.grpDateTime);
             this.Controls.Add(this.grpInvigilator);
             this.Controls.Add(this.grpRoom);
-            this.Controls.Add(this.grpCourse);
             this.Controls.Add(this.ExamListComboBox);
             this.Controls.Add(this.lblSelectExam);
             this.Name = "EditExamForm";
             this.Text = "Edit Exam Schedule";
             this.Load += new System.EventHandler(this.EditExamForm_Load);
-            this.grpCourse.ResumeLayout(false);
             this.grpRoom.ResumeLayout(false);
             this.grpRoom.PerformLayout();
             this.grpInvigilator.ResumeLayout(false);
@@ -341,6 +396,8 @@
             this.grpDateTime.PerformLayout();
             this.grpSpecial.ResumeLayout(false);
             this.grpSpecial.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,8 +407,6 @@
 
             private System.Windows.Forms.Label lblSelectExam;
             private System.Windows.Forms.ComboBox ExamListComboBox;
-            private System.Windows.Forms.GroupBox grpCourse;
-            private System.Windows.Forms.ComboBox CourseComboBox;
             private System.Windows.Forms.GroupBox grpRoom;
             private System.Windows.Forms.TextBox txtCapacity;
             private System.Windows.Forms.Label lblCapacity;
@@ -370,12 +425,18 @@
             private System.Windows.Forms.Label lblDuration;
             private System.Windows.Forms.Label labelDurationText;
             private System.Windows.Forms.Button UpdateButton;
-            private System.Windows.Forms.Button ClearButton;
             private System.Windows.Forms.Button CancelButton;
         private System.Windows.Forms.DateTimePicker EndTimeDateTimePicker;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker StartTimedateTimePicker;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox CourseComboBox;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton RetakeRadioButton;
+        private System.Windows.Forms.RadioButton SpecialRadioButton;
+        private System.Windows.Forms.RadioButton FinalRadioButton;
+        private System.Windows.Forms.RadioButton MidTermRadioButton;
     }
     }
 

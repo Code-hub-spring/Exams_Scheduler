@@ -15,6 +15,9 @@ namespace WindowsFormsApp1
         private RoomIntermediary roomIntermediary = new RoomIntermediary();
         private InvigilatorIntermediary invigilatorIntermediary = new InvigilatorIntermediary();
         private CoursesIntermediary courseIntermediary = new CoursesIntermediary();
+       private ScheduledExamDerived scheduledExam = new ScheduledExamDerived();
+        internal static BookExamRoomForm instance;
+       private string examType;
 
         // base exam duration in hours (change if needed)
         private const int BaseExamHours = 2;
@@ -25,6 +28,14 @@ namespace WindowsFormsApp1
 
         }
 
+        internal static BookExamRoomForm GetInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new BookExamRoomForm();
+            }
+            return instance;
+        }
         private void BookExamRoomForm_Load(object sender, EventArgs e)
         {
             //LoadCoursesFromEnum();
@@ -110,7 +121,7 @@ namespace WindowsFormsApp1
         {
             if (RoomComboBox.SelectedValue == null)
                 return;
-
+          
             int roomId;
             if (int.TryParse(RoomComboBox.SelectedValue.ToString(), out roomId))
             {
@@ -138,6 +149,7 @@ namespace WindowsFormsApp1
         private void ScheduleButton_Click(object sender, EventArgs e)
         {
             // Basic validation
+           
             if (ExamTitleTextBox.Text==null || CourseComboBox.SelectedItem == null ||
                 RoomComboBox.SelectedValue == null ||
                 InvigilatorComboBox.SelectedValue == null)
@@ -147,6 +159,12 @@ namespace WindowsFormsApp1
                 return;
             }
 
+            if(examType=="")
+            {
+                   MessageBox.Show("Please select exam type.",
+                   "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             int roomId = Convert.ToInt32(RoomComboBox.SelectedValue);
             int invigilatorId = Convert.ToInt32(InvigilatorComboBox.SelectedValue);
             int courseId = Convert.ToInt32(CourseComboBox.SelectedValue);
@@ -176,9 +194,9 @@ namespace WindowsFormsApp1
             DateTime startTime = ExamStartDateTimePicker.Value;
             DateTime endTime = ExamEndDateTimePicker.Value;
 
-            TimeSpan duration = endTime - startTime;
-
-            if (duration.TotalMinutes <= 0)
+            TimeSpan duration = scheduledExam.CalculateDuration(startTime, endTime);
+           // TimeSpan duration = endTime - startTime;
+           if (duration.TotalMinutes <= 0)
             {
                 MessageBox.Show("End time must be greater than Start time.",
                     "Invalid Time", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -188,18 +206,18 @@ namespace WindowsFormsApp1
             // Add extra hours if required
             if (SpecialPermissionCheckBox.Checked && extraHours > 0)
             {
-                duration = duration.Add(TimeSpan.FromHours(extraHours));
+                duration = scheduledExam.CalculateDuration(startTime, endTime, extraHours); // Call overload method if extra hours added
+                // duration = duration.Add(TimeSpan.FromHours(extraHours));
             }
-
-            // Update UI display
-            TotalExamHoursLabel.Text = duration.TotalHours.ToString("0.##") + " hours";
+           TotalExamHoursLabel.Text = duration.TotalHours.ToString("0.##") + " hours";
            string examTitle = ExamTitleTextBox.Text;
            // Convert to minutes for DB
             int totalMinutes = (int)duration.TotalMinutes;
-// create exam object
-            Exam exam = new Exam
+            // create exam object
+            ScheduledExamDerived exam = new ScheduledExamDerived
             {
                 ExamTitle =examTitle,
+                ExamType = examType,
                 CourseID = courseId,
                 CourseName=courseName,
                 RoomID = roomId,
@@ -254,9 +272,28 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void SpecialPermGroupBox_Enter(object sender, EventArgs e)
+        private void MidTermRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-
+            RadioButton radioButton = (RadioButton)sender;
+           
+            switch(radioButton.Name)
+            {
+                case "MidTermRadioButton":
+                    examType =ExamType.MidTerm.ToString();
+                    break;
+                case "FinalRadioButton":
+                    examType = ExamType.Final.ToString(); 
+                    break;
+                case "RetakeRadioButton":
+                    examType = ExamType.Retake.ToString(); ;
+                    break;
+                case "SpecialRadioButton":
+                    examType = ExamType.Special.ToString(); ;
+                    break;
+                default:
+                    examType = "";
+                    break;
+            }
         }
     }
 }

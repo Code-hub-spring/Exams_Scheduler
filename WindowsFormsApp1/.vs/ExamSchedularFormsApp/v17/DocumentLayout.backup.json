@@ -3,62 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\forms\\editexamform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\editexamform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\models\\exambase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\models\\exambase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\forms\\editexamform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\editexamform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\forms\\bookexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\bookexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\forms\\bookexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\bookexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\intermediaryclasses\\examscheduleintermediarycs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\intermediaryclasses\\examscheduleintermediarycs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\forms\\editexamform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\editexamform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\dataclasses\\examscheduledataclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\dataclasses\\examscheduledataclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\forms\\editexamform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\editexamform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/FD785B83C228E79E1B1C84E5370DB40A_CLASSLABS_FINAL_PROJECT_WINDOWSFORMSAPP1_WINDOWSFORMSAPP1_BIN_DEBUG_APPDATA_EXAMSCHEDULERDB.MDF/True/SqlTable/dbo.Exams.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\forms\\bookexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\bookexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_BXG69850_DOCUMENTS_CIS5606_INCLASSLABS_FINAL_PROJECT_WINDOWSFORMSAPP1_WINDOWSFORMSAPP1_APPDATA_EXAMSCHEDULERDB.MDF/True/SqlTable/dbo.Exams.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\forms\\examcancelform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\examcancelform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\forms\\bookexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\bookexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\forms\\maindashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\maindashboardform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\intermediaryclasses\\coursesintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\intermediaryclasses\\coursesintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/FD785B83C228E79E1B1C84E5370DB40A_CLASSLABS_FINAL_PROJECT_WINDOWSFORMSAPP1_WINDOWSFORMSAPP1_BIN_DEBUG_APPDATA_EXAMSCHEDULERDB.MDF/True/SqlTable/dbo.Courses.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bxg69850\\AppData\\Local\\Temp\\5\\hrkrmgbo..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\models\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\models\\exam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\models\\scheduledexamderived.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\models\\scheduledexamderived.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\enums\\enumdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\enums\\enumdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bxg69850\\AppData\\Local\\Temp\\5\\hrkrmgbo..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\intermediaryclasses\\invigilatorintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\intermediaryclasses\\invigilatorintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bxg69850\\AppData\\Local\\Temp\\5\\hrkrmgbo..sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\interfaces\\iexamscheduleintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\interfaces\\iexamscheduleintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\forms\\viewexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\viewexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\forms\\viewexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\viewexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -68,85 +62,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "dbo.Courses [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/FD785B83C228E79E1B1C84E5370DB40A_CLASSLABS_FINAL_PROJECT_WINDOWSFORMSAPP1_WINDOWSFORMSAPP1_BIN_DEBUG_APPDATA_EXAMSCHEDULERDB.MDF/True/SqlTable/dbo.Courses.sql",
-              "ToolTip": "dbo.Courses [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-11-21T05:37:12.255Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "dbo.Exams [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_BXG69850_DOCUMENTS_CIS5606_INCLASSLABS_FINAL_PROJECT_WINDOWSFORMSAPP1_WINDOWSFORMSAPP1_APPDATA_EXAMSCHEDULERDB.MDF/True/SqlTable/dbo.Exams.sql",
-              "ToolTip": "dbo.Exams [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-11-21T05:36:55.613Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CoursesIntermediary.cs",
-              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\IntermediaryClasses\\CoursesIntermediary.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\IntermediaryClasses\\CoursesIntermediary.cs",
-              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\IntermediaryClasses\\CoursesIntermediary.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\IntermediaryClasses\\CoursesIntermediary.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAA/wBAAAAAZAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "EditExamForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\EditExamForm.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Forms\\EditExamForm.cs",
+              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\EditExamForm.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\Forms\\EditExamForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T05:25:52.559Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BookExamRoomForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\BookExamRoomForm.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Forms\\BookExamRoomForm.cs",
-              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\BookExamRoomForm.cs [Design]",
-              "RelativeToolTip": "WindowsFormsApp1\\Forms\\BookExamRoomForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-21T05:17:56.259Z",
+              "WhenOpened": "2025-11-24T00:56:53.783Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "ExamBase.cs",
+              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Models\\ExamBase.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Models\\ExamBase.cs",
+              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Models\\ExamBase.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Models\\ExamBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T00:44:51.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "EditExamForm.cs",
               "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\EditExamForm.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Forms\\EditExamForm.cs",
               "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\EditExamForm.cs",
               "RelativeToolTip": "WindowsFormsApp1\\Forms\\EditExamForm.cs",
-              "ViewState": "AgIAALoAAAAAAAAAAAAjwMQAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAwwJIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T00:37:52.549Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "dbo.Exams [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/FD785B83C228E79E1B1C84E5370DB40A_CLASSLABS_FINAL_PROJECT_WINDOWSFORMSAPP1_WINDOWSFORMSAPP1_BIN_DEBUG_APPDATA_EXAMSCHEDULERDB.MDF/True/SqlTable/dbo.Exams.sql",
-              "ToolTip": "dbo.Exams [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-11-21T05:01:03.54Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "SQLQuery1.sql ",
-              "DocumentMoniker": "C:\\Users\\bxg69850\\AppData\\Local\\Temp\\5\\hrkrmgbo..sql",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\5\\hrkrmgbo..sql",
-              "ToolTip": "SQLQuery1.sql *",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-11-21T04:56:44.433Z",
+              "WhenOpened": "2025-11-23T22:19:13.496Z",
               "EditorCaption": ""
             },
             {
@@ -157,86 +110,125 @@
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Forms\\BookExamRoomForm.cs",
               "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\BookExamRoomForm.cs",
               "RelativeToolTip": "WindowsFormsApp1\\Forms\\BookExamRoomForm.cs",
-              "ViewState": "AgIAAKMAAAAAAAAAAAAUwKwAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAsBAAAAAAAAAAAAAA0AAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-18T03:07:32.611Z",
+              "WhenOpened": "2025-11-23T22:01:01.357Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "ExamScheduleInterMediarycs.cs",
               "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\IntermediaryClasses\\ExamScheduleInterMediarycs.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\IntermediaryClasses\\ExamScheduleInterMediarycs.cs",
               "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\IntermediaryClasses\\ExamScheduleInterMediarycs.cs",
               "RelativeToolTip": "WindowsFormsApp1\\IntermediaryClasses\\ExamScheduleInterMediarycs.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAADwv24AAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAiwJ4AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T03:54:27.643Z",
+              "WhenOpened": "2025-11-23T19:36:04.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ViewExamRoomForm.cs",
+              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\ViewExamRoomForm.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Forms\\ViewExamRoomForm.cs",
+              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\ViewExamRoomForm.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Forms\\ViewExamRoomForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T19:34:51.938Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ViewExamRoomForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\ViewExamRoomForm.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Forms\\ViewExamRoomForm.cs",
+              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\ViewExamRoomForm.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\Forms\\ViewExamRoomForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T19:34:50.471Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "InvigilatorIntermediary.cs",
+              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\IntermediaryClasses\\InvigilatorIntermediary.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\IntermediaryClasses\\InvigilatorIntermediary.cs",
+              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\IntermediaryClasses\\InvigilatorIntermediary.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\IntermediaryClasses\\InvigilatorIntermediary.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T19:34:17.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ScheduledExamDerived.cs",
+              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Models\\ScheduledExamDerived.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Models\\ScheduledExamDerived.cs",
+              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Models\\ScheduledExamDerived.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Models\\ScheduledExamDerived.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T19:31:13.842Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ExamCancelForm.cs",
-              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\ExamCancelForm.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Forms\\ExamCancelForm.cs",
-              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\ExamCancelForm.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Forms\\ExamCancelForm.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAkwDoAAAAAAAAAAAAAAA==",
+              "Title": "ExamScheduleDataClass.cs",
+              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\DataClasses\\ExamScheduleDataClass.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\DataClasses\\ExamScheduleDataClass.cs",
+              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\DataClasses\\ExamScheduleDataClass.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\DataClasses\\ExamScheduleDataClass.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAD4vy0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T01:09:58.52Z",
+              "WhenOpened": "2025-11-23T18:41:40.272Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "EnumData.cs",
-              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Enums\\EnumData.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Enums\\EnumData.cs",
-              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Enums\\EnumData.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Enums\\EnumData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAASAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "BookExamRoomForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\BookExamRoomForm.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Forms\\BookExamRoomForm.cs",
+              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\BookExamRoomForm.cs [Design]",
+              "RelativeToolTip": "WindowsFormsApp1\\Forms\\BookExamRoomForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T01:02:33.503Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EditExamForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\EditExamForm.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Forms\\EditExamForm.cs",
-              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\EditExamForm.cs [Design]",
-              "RelativeToolTip": "WindowsFormsApp1\\Forms\\EditExamForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-17T00:20:31.939Z",
+              "WhenOpened": "2025-11-22T07:12:57.157Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Exam.cs",
-              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Models\\Exam.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Models\\Exam.cs",
-              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Models\\Exam.cs",
-              "RelativeToolTip": "WindowsFormsApp1\\Models\\Exam.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "IExamScheduleIntermediary.cs",
+              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Interfaces\\IExamScheduleIntermediary.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Interfaces\\IExamScheduleIntermediary.cs",
+              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Interfaces\\IExamScheduleIntermediary.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Interfaces\\IExamScheduleIntermediary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-16T03:15:19.481Z",
+              "WhenOpened": "2025-11-21T22:03:08.823Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "MainDashboardForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\MainDashboardForm.cs",
-              "RelativeDocumentMoniker": "WindowsFormsApp1\\Forms\\MainDashboardForm.cs",
-              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\MainDashboardForm.cs [Design]",
-              "RelativeToolTip": "WindowsFormsApp1\\Forms\\MainDashboardForm.cs [Design]",
+              "Title": "EnumData.cs",
+              "DocumentMoniker": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Enums\\EnumData.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Enums\\EnumData.cs",
+              "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Enums\\EnumData.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Enums\\EnumData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-15T22:08:13.508Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-17T01:02:33.503Z",
+              "EditorCaption": ""
             }
           ]
         }

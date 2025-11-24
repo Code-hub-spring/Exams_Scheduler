@@ -13,11 +13,21 @@ namespace WindowsFormsApp1
 {
     public partial class AddInvigilatorForm : Form
     {
+        internal static AddInvigilatorForm addInvigilatorInstance;
         InvigilatorIntermediary invigilatorIntermediary = new InvigilatorIntermediary();
         public AddInvigilatorForm()
         {
             InitializeComponent();
             Text = "Add Invigilator";
+        }
+         internal static AddInvigilatorForm GetAddInvigilatorFormInstance()
+        {
+            //This method returns an instance of AddInvigilatorForm, only if the instance is null.
+            if (addInvigilatorInstance == null)
+            {
+                addInvigilatorInstance = new AddInvigilatorForm();
+            }
+            return addInvigilatorInstance;
         }
 
         private void AddInvigilatorForm_Load(object sender, EventArgs e)

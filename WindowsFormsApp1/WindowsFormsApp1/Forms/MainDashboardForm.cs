@@ -22,7 +22,7 @@ namespace WindowsFormsApp1
 
         private void MainDashboard_Load(object sender, EventArgs e)
         {
-
+            //display view exam room detils
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,35 +44,44 @@ namespace WindowsFormsApp1
 
         private void addInvigitatorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddInvigilatorForm addInvigilatorForm = new AddInvigilatorForm();
-            addInvigilatorForm.MdiParent = this;
-            addInvigilatorForm.Show();
+            this.CloseOpenedForms();
+            AddInvigilatorForm addInvigilator = AddInvigilatorForm.GetAddInvigilatorFormInstance();
+            addInvigilator.MdiParent = this;
+            addInvigilator.Show();
         }
 
         private void bookTheExamRoomToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BookExamRoomForm bookExamRoomForm = new BookExamRoomForm();
+            //create an instantance using static method and
+            this.CloseOpenedForms();
+            BookExamRoomForm bookExamRoomForm =  BookExamRoomForm.GetInstance();
             bookExamRoomForm.MdiParent = this;
             bookExamRoomForm.Show();
+
+
         }
 
         private void viewAllSchedulesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ViewExamScheduleDetailsForm viewExamScheduleDetailsForm = new ViewExamScheduleDetailsForm();
+            //should call static method to create instance
+            ViewExamScheduleDetailsForm viewExamScheduleDetailsForm = ViewExamScheduleDetailsForm.GetViewExamScheduleDetailsFormInstance();
             viewExamScheduleDetailsForm.MdiParent= this;
             viewExamScheduleDetailsForm.Show();
         }
 
         private void addExamRoomToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddExamRoomForm addExamRoom=new AddExamRoomForm();
+            // AddExamRoomForm addExamRoom=new AddExamRoomForm();
+            this.CloseOpenedForms();
+            AddExamRoomForm addExamRoom = AddExamRoomForm.GetAddExamRoomFormInstance();
             addExamRoom.MdiParent= this;
             addExamRoom.Show();
         }
 
         private void cancelTheScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ExamCancelForm examCancelForm = new ExamCancelForm();
+            this.CloseOpenedForms();
+            ExamCancelForm examCancelForm = ExamCancelForm.GetExamCancelFormInstance();
             examCancelForm.MdiParent= this;
             examCancelForm.Show();
 
@@ -87,13 +96,15 @@ namespace WindowsFormsApp1
 
         private void editScheduleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditExamForm editExam=new EditExamForm();
+            this.CloseOpenedForms();
+            EditExamForm editExam=EditExamForm.GetEditExamFormInstance();
             editExam.MdiParent= this;
             editExam.Show();
         }
 
         private void viewInvigilatorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             ViewInvigilatorForm viewInvigilator=new ViewInvigilatorForm();
             viewInvigilator.MdiParent= this;
             viewInvigilator.Show();
@@ -105,5 +116,14 @@ namespace WindowsFormsApp1
             viewExamRoom.MdiParent= this;
             viewExamRoom.Show();
         }
+
+        private void CloseOpenedForms()
+        {
+            //Close any open forms
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+        } //CloseOpenedForms() end
     }
 }

@@ -69,7 +69,6 @@
   <ItemGroup>
     <Compile Include="DataClasses\ExamScheduleDataClass.cs" />
     <Compile Include="Enums\EnumData.cs" />
-    <Compile Include="Enums\EnumHelper.cs" />
     <Compile Include="Forms\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,11 +123,16 @@
     <Compile Include="Forms\ViewInvigilatorForm.Designer.cs">
       <DependentUpon>ViewInvigilatorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\ICourseIntermediary.cs" />
+    <Compile Include="Interfaces\IExamScheduleIntermediary.cs" />
+    <Compile Include="Interfaces\IInvigilatorIntermediary.cs" />
+    <Compile Include="Interfaces\IRoomIntermediary.cs" />
     <Compile Include="IntermediaryClasses\CoursesIntermediary.cs" />
     <Compile Include="IntermediaryClasses\ExamScheduleInterMediarycs.cs" />
     <Compile Include="IntermediaryClasses\InvigilatorIntermediary.cs" />
     <Compile Include="IntermediaryClasses\RoomIntermediary.cs" />
-    <Compile Include="Models\Exam.cs" />
+    <Compile Include="Models\ExamBase.cs" />
+    <Compile Include="Models\ScheduledExamDerived.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Forms\ViewExamScheduleDetailsForm.cs">

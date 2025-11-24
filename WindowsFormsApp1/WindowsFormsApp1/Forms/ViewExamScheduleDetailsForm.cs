@@ -13,11 +13,21 @@ namespace WindowsFormsApp1
 {
     public partial class ViewExamScheduleDetailsForm : Form
     {
+        internal static ViewExamScheduleDetailsForm instance;
         public ViewExamScheduleDetailsForm()
         {
             InitializeComponent();
         }
 
+        internal static ViewExamScheduleDetailsForm GetViewExamScheduleDetailsFormInstance()
+        {
+            //This method returns an instance of ViewExamScheduleDetailsForm, only if the instance is null.
+            if (instance == null)
+            {
+                instance = new ViewExamScheduleDetailsForm();
+            }
+            return instance;
+        }
         private void ViewExamScheduleDetailsForm_Load(object sender, EventArgs e)
         {
             try
