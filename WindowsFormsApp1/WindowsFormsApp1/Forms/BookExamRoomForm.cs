@@ -34,13 +34,17 @@ namespace WindowsFormsApp1
             }
             return instance;
         }
+        private void BookExamRoomForm_Close(object sender, EventArgs e)
+        {
+            instance = null;
+        }
         private void BookExamRoomForm_Load(object sender, EventArgs e)
         {
             //LoadCoursesFromEnum();
             LoadRoomsFromDb();
             LoadInvigilatorsFromDb();
             LoadCourseFromDB();
-
+            ExamDateTimePicker.MinDate = DateTime.Today;    
             ExamStartDateTimePicker.Format = DateTimePickerFormat.Custom;
             ExamStartDateTimePicker.CustomFormat = "HH:mm";
             ExamStartDateTimePicker.ShowUpDown = true;
@@ -133,6 +137,7 @@ namespace WindowsFormsApp1
                                 int courseId = Convert.ToInt32(CourseComboBox.SelectedValue);
                                 String courseName = CourseComboBox.Text;
                                 int extraHours = 0;
+                             
 
                                 DateTime startTime = ExamStartDateTimePicker.Value;
                                 DateTime endTime = ExamEndDateTimePicker.Value;

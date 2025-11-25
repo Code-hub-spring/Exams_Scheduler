@@ -39,10 +39,10 @@
             this.cancelTheScheduleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewAllSchedulesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.viewInvigilatorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewExamRoomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +56,7 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(982, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -135,9 +135,23 @@
             // viewAllSchedulesToolStripMenuItem
             // 
             this.viewAllSchedulesToolStripMenuItem.Name = "viewAllSchedulesToolStripMenuItem";
-            this.viewAllSchedulesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewAllSchedulesToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.viewAllSchedulesToolStripMenuItem.Text = "View All Schedules";
             this.viewAllSchedulesToolStripMenuItem.Click += new System.EventHandler(this.viewAllSchedulesToolStripMenuItem_Click);
+            // 
+            // viewInvigilatorsToolStripMenuItem
+            // 
+            this.viewInvigilatorsToolStripMenuItem.Name = "viewInvigilatorsToolStripMenuItem";
+            this.viewInvigilatorsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.viewInvigilatorsToolStripMenuItem.Text = "View Invigilators";
+            this.viewInvigilatorsToolStripMenuItem.Click += new System.EventHandler(this.viewInvigilatorsToolStripMenuItem_Click);
+            // 
+            // viewExamRoomsToolStripMenuItem
+            // 
+            this.viewExamRoomsToolStripMenuItem.Name = "viewExamRoomsToolStripMenuItem";
+            this.viewExamRoomsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.viewExamRoomsToolStripMenuItem.Text = "View Exam Rooms";
+            this.viewExamRoomsToolStripMenuItem.Click += new System.EventHandler(this.viewExamRoomsToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -154,29 +168,18 @@
             this.aboutToolStripMenuItem1.Text = "About";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
-            // viewInvigilatorsToolStripMenuItem
-            // 
-            this.viewInvigilatorsToolStripMenuItem.Name = "viewInvigilatorsToolStripMenuItem";
-            this.viewInvigilatorsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.viewInvigilatorsToolStripMenuItem.Text = "View Invigilators";
-            this.viewInvigilatorsToolStripMenuItem.Click += new System.EventHandler(this.viewInvigilatorsToolStripMenuItem_Click);
-            // 
-            // viewExamRoomsToolStripMenuItem
-            // 
-            this.viewExamRoomsToolStripMenuItem.Name = "viewExamRoomsToolStripMenuItem";
-            this.viewExamRoomsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.viewExamRoomsToolStripMenuItem.Text = "View Exam Rooms";
-            this.viewExamRoomsToolStripMenuItem.Click += new System.EventHandler(this.viewExamRoomsToolStripMenuItem_Click);
-            // 
             // MainDashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(982, 953);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(1000, 1000);
             this.Name = "MainDashboardForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.MainDashboard_Load);
             this.menuStrip1.ResumeLayout(false);

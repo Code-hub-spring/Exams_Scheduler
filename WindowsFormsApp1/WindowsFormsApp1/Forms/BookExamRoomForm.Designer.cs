@@ -77,6 +77,8 @@
             // CourseComboBox
             // 
             this.CourseComboBox.FormattingEnabled = true;
+            this.CourseComboBox.Items.AddRange(new object[] {
+            "----select----"});
             this.CourseComboBox.Location = new System.Drawing.Point(236, 135);
             this.CourseComboBox.Name = "CourseComboBox";
             this.CourseComboBox.Size = new System.Drawing.Size(186, 24);
@@ -158,6 +160,7 @@
             // 
             this.ExamDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.ExamDateTimePicker.Location = new System.Drawing.Point(236, 312);
+            this.ExamDateTimePicker.MinDate = new System.DateTime(2025, 11, 25, 0, 0, 0, 0);
             this.ExamDateTimePicker.Name = "ExamDateTimePicker";
             this.ExamDateTimePicker.Size = new System.Drawing.Size(306, 22);
             this.ExamDateTimePicker.TabIndex = 10;
@@ -227,7 +230,6 @@
             this.SpecialPermissionCheckBox.TabIndex = 13;
             this.SpecialPermissionCheckBox.Text = "Any Student Need Special Permission ";
             this.SpecialPermissionCheckBox.UseVisualStyleBackColor = true;
-          //  this.SpecialPermissionCheckBox.CheckedChanged += new System.EventHandler(this.SpecialPermissionCheckBox_CheckedChanged);
             // 
             // ScheduleButton
             // 

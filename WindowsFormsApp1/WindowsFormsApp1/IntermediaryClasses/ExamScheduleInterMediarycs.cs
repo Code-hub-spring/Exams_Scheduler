@@ -8,14 +8,12 @@ using System.Threading.Tasks;
 using WindowsFormsApp1.DataClasses;
 using WindowsFormsApp1.Interfaces;
 using WindowsFormsApp1.Models;
-
 //Created by Bhagya G
 namespace WindowsFormsApp1.IntermediaryClasses
 {
 internal class ExamScheduleInterMediarycs : IExamScheduleIntermediary
 {
     public string LastError { get; set; }
-
     // SELECT ALL EXAMS
     public DataTable SelectExams()
     {
@@ -24,21 +22,22 @@ internal class ExamScheduleInterMediarycs : IExamScheduleIntermediary
             ExamScheduleDataClass db = new ExamScheduleDataClass();
             string query = @"
                 SELECT 
+                    E.ExamType,  
                     E.ExamID,
+                    E.ExamTitle,
                     E.CourseName,
-                    E.CourseID,
-                    C.CourseNumber, 
-                    R.RoomName,
-                    I.Name AS InvigilatorName,
-                    I.InvigilatorEmpID AS InvigilatorEmpID,
-                    E.ExamDate,
+                   C.CourseNumber, 
+                    R.RoomName, E.ExamDate,
                     E.ExamStartTime,
                     E.ExamEndTime,
                     E.DurationMinutes,
+                    R.Capacity AS RoomCapacity,
+                    I.Name AS InvigilatorName,
+                    I.InvigilatorEmpID AS InvigilatorEmpID,
                     E.SpecialNeeds,
                     E.SpecialStudentName,
-                    E.ExtraHours,
-                    E.ExamTitle
+                    E.ExtraHours
+                   
                 FROM Exams E
                 LEFT JOIN Courses C
                     ON E.CourseID = C.CourseID
@@ -67,10 +66,10 @@ internal class ExamScheduleInterMediarycs : IExamScheduleIntermediary
         }
         // INSERT EXAM
         public int InsertExam(ScheduledExamDerived exam)
-    {
-        ExamScheduleDataClass db = new ExamScheduleDataClass();
+        {
+             ExamScheduleDataClass db = new ExamScheduleDataClass();
 
-        string query = @"INSERT INTO Exams
+             string query = @"INSERT INTO Exams
                              (CourseID, RoomID, InvigilatorID, ExamDate, ExamStartTime, ExamEndTime, DurationMinutes, SpecialNeeds, SpecialStudentName, ExtraHours, CourseName, ExamTitle,ExamType)
                              VALUES
                              (@CourseID, @RoomID, @InvigilatorID, @ExamDate, @ExamStartTime, @ExamEndTime, @DurationMinutes, @SpecialNeeds, @SpecialStudentName, @ExtraHours, @CourseName, @ExamTitle, @ExamType)";
@@ -99,7 +98,6 @@ internal class ExamScheduleInterMediarycs : IExamScheduleIntermediary
             return -1;
         }
     }
-
     // UPDATE EXAM
     public int UpdateExam(ScheduledExamDerived exam, int examID)
     {
@@ -142,21 +140,15 @@ internal class ExamScheduleInterMediarycs : IExamScheduleIntermediary
             return -1;
         }
     }
-
     // DELETE EXAM
     public int DeleteExam(int examId, int roomId, int invigilatorId)
     {
         ExamScheduleDataClass db = new ExamScheduleDataClass();
-
         SqlParameter p1 = new SqlParameter("@ExamID", examId);
         SqlParameter p2 = new SqlParameter("@RoomID", roomId);
         SqlParameter p3 = new SqlParameter("@InvigilatorID", invigilatorId);
-
         return db.ExecNonQuery("CancelExam", CommandType.StoredProcedure, p1, p2, p3);
-        
     }
-
-
     // SELECT EXAM IDS
     public DataTable SelectExamIDs()
     {
@@ -164,5 +156,5 @@ internal class ExamScheduleInterMediarycs : IExamScheduleIntermediary
         string q = "SELECT ExamID, ExamTitle FROM Exams ORDER BY ExamID DESC";
         return db.GetTable(q, CommandType.Text);
     }
-}
-    }
+    }// ExamScheduleInterMediarycs
+}// namespace

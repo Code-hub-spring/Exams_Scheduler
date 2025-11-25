@@ -40,11 +40,6 @@ namespace WindowsFormsApp1
             addExamRoomForm.Show();
         }
 
-        //private void addExamToolStripMenuItem1_Click(object sender, EventArgs e)
-        //{
-        //    AddExamRoomForm addExamRoomForm = new AddExamRoomForm();
-        //}
-
         private void addInvigitatorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.CloseOpenedForms();

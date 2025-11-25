@@ -32,11 +32,15 @@ namespace WindowsFormsApp1.Forms
         internal static EditExamForm GetEditExamFormInstance()
         {
             //This method returns an instance of EditExamForm, only if the instance is null.
-            if (instance == null)
+            if (instance == null || instance.IsDisposed)
             {
                 instance = new EditExamForm();
             }
             return instance;
+        }
+        private void EditExamForm_Close(object sender,EventArgs e)
+        {
+            instance = null;
         }
         private void EditExamForm_Load(object sender, EventArgs e)
         {
@@ -44,6 +48,17 @@ namespace WindowsFormsApp1.Forms
             LoadCourses();
             LoadRooms();
             LoadInvigilators();
+
+            StartTimedateTimePicker.Format = DateTimePickerFormat.Custom;
+            StartTimedateTimePicker.CustomFormat = "HH:mm";
+            StartTimedateTimePicker.ShowUpDown = true;
+
+            EndTimeDateTimePicker.Format = DateTimePickerFormat.Custom;
+            EndTimeDateTimePicker.CustomFormat = "HH:mm";
+            EndTimeDateTimePicker.ShowUpDown = true;
+
+            // Disable past dates in Exam Date
+            ExamDateTime.MinDate = DateTime.Today;
 
             grpSpecial.Enabled = false;
              ExamListComboBox.SelectedIndexChanged += cmbExamList_SelectedIndexChanged;
@@ -136,30 +151,20 @@ namespace WindowsFormsApp1.Forms
             TimeSpan startTS = (TimeSpan)row["ExamStartTime"];
             TimeSpan endTS = (TimeSpan)row["ExamEndTime"];
             // Set date
-            ExamDateTime.Value = date;
-            // Combine date + time
             DateTime startDateTime = date.Date.Add(startTS);
             DateTime endDateTime = date.Date.Add(endTS);
-            // Set time pickers
+
             StartTimedateTimePicker.Value = startDateTime;
             EndTimeDateTimePicker.Value = endDateTime;
+
             int extraHours = row["ExtraHours"] != DBNull.Value
-                        ? Convert.ToInt32(row["ExtraHours"])
-                        : 0;
-                ExtraHoursTextBox.Text = extraHours.ToString();
-                // Show final duration
-                //if (extraHours > 0)
-                //{
-                //    exam_permission = new ScheduledExamDerived { ExtraHours = extraHours };
-                //}
-                //else
-                //{
-                //    exam_permission = new ExamBase();
-                //}
-                //TimeSpan duration = exam_permission.CalculateDuration(startDateTime, endDateTime);
+        ? Convert.ToInt32(row["ExtraHours"]): 0;
+            ExtraHoursTextBox.Text = extraHours.ToString();
+
             TimeSpan duration = TimeSpan.FromMinutes(Convert.ToInt32(row["DurationMinutes"]));
             lblDuration.Text = duration.TotalHours.ToString("0.##") + " hours";
-                // check column exists before reading
+
+            // check column exists before reading
             chkSpecial.Checked = row.Table.Columns.Contains("SpecialNeeds")
                 ? Convert.ToBoolean(row["SpecialNeeds"])
                 : false;
@@ -190,12 +195,12 @@ namespace WindowsFormsApp1.Forms
             }
         }
         //calculate the total hpurs for exam
-        private void UpdateDuration()
-        {
-            int extra = 0;
-            int.TryParse(ExtraHoursTextBox.Text, out extra);
-            lblDuration.Text = $"{BaseDuration + extra} Hours";
-        }
+        //private void UpdateDuration()
+        //{
+        //    int extra = 0;
+        //    int.TryParse(ExtraHoursTextBox.Text, out extra);
+        //    lblDuration.Text = $"{BaseDuration + extra} Hours";
+        //}
     // update the exam data
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -204,28 +209,41 @@ namespace WindowsFormsApp1.Forms
                 MessageBox.Show("Select an exam first.");
                 return;
             }
-            int extraHours = chkSpecial.Checked ? int.Parse(ExtraHoursTextBox.Text) : 0;
-            ScheduledExamDerived exam = new ScheduledExamDerived
-            {
-               // CourseID = cmbCourse.SelectedValue, 
-                RoomID = Convert.ToInt32(RoomComboBox.SelectedValue),
-                InvigilatorID = Convert.ToInt32(InvigilatorComboBox.SelectedValue),
-                ExamDateTime = ExamDateTime.Value,
-                ExamType = examType,
-                ExamStartTime = StartTimedateTimePicker.Value,
-                ExamEndTime = EndTimeDateTimePicker.Value,
-                DurationMinutes = (BaseDuration + extraHours) * 60,
-                CourseID = Convert.ToInt32(CourseComboBox.SelectedValue),
-                SpecialPermission = chkSpecial.Checked,
-                SpecialStudentName = chkSpecial.Checked ? StudentNameTextBox.Text.Trim() : null,
-                ExtraHours = extraHours
-            };
 
-            int result = examIM.UpdateExam(exam, SelectedExamID);
-            if (result > 0)
-                MessageBox.Show("Exam Updated Successfully!");
+            if (EndTimeDateTimePicker.Value <= StartTimedateTimePicker.Value)
+            {
+                lblDuration.Text = "Invalid Time";
+                EndTimeDateTimePicker.Value = StartTimedateTimePicker.Value.AddMinutes(30);
+                MessageBox.Show("End time must be greater than Start time.", "Invalid Time",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             else
-                MessageBox.Show("Error: " + examIM.LastError);
+            {
+
+                int extraHours = chkSpecial.Checked ? int.Parse(ExtraHoursTextBox.Text) : 0;
+                ScheduledExamDerived exam = new ScheduledExamDerived
+                {
+                    // CourseID = cmbCourse.SelectedValue, 
+                    RoomID = Convert.ToInt32(RoomComboBox.SelectedValue),
+                    InvigilatorID = Convert.ToInt32(InvigilatorComboBox.SelectedValue),
+                    ExamDateTime = ExamDateTime.Value,
+                    ExamType = examType,
+                    ExamStartTime = StartTimedateTimePicker.Value,
+                    ExamEndTime = EndTimeDateTimePicker.Value,
+                    DurationMinutes = (BaseDuration + extraHours) * 60,
+                    CourseID = Convert.ToInt32(CourseComboBox.SelectedValue),
+                    SpecialPermission = chkSpecial.Checked,
+                    SpecialStudentName = chkSpecial.Checked ? StudentNameTextBox.Text.Trim() : null,
+                    ExtraHours = extraHours
+                };
+
+                int result = examIM.UpdateExam(exam, SelectedExamID);
+                if (result > 0)
+                    MessageBox.Show("Exam Updated Successfully!");
+                else
+                    MessageBox.Show("Error: " + examIM.LastError);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -259,20 +277,21 @@ namespace WindowsFormsApp1.Forms
 
         private void StartTimedateTimePicker_ValueChanged(object sender, EventArgs e)
         {
-            // Combine date + time values
             DateTime startDateTime = ExamDateTime.Value.Date.Add(StartTimedateTimePicker.Value.TimeOfDay);
             DateTime endDateTime = ExamDateTime.Value.Date.Add(EndTimeDateTimePicker.Value.TimeOfDay);
-            // Determine which polymorphic exam to use
-            ExamBase exam_permission;
+
+           // Read extra hours
             int extraHours = 0;
             int.TryParse(ExtraHoursTextBox.Text, out extraHours);
 
+            // Create correct exam object (polymorphism)
+            ExamBase exam_permission;
             if (chkSpecial.Checked && extraHours > 0)
                 exam_permission = new ScheduledExamDerived { ExtraHours = extraHours };
             else
                 exam_permission = new ExamBase();
 
-            // Calculate duration using polymorphism
+            // Calculate duration
             TimeSpan duration = exam_permission.CalculateDuration(startDateTime, endDateTime);
             // Validate
             if (duration.TotalMinutes <= 0)
@@ -282,7 +301,6 @@ namespace WindowsFormsApp1.Forms
             }
             // Display duration
             lblDuration.Text = duration.TotalHours.ToString("0.##") + " Hours";
-            UpdateDuration();
         }
 
     }

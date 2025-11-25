@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
          internal static AddInvigilatorForm GetAddInvigilatorFormInstance()
         {
             //This method returns an instance of AddInvigilatorForm, only if the instance is null.
-            if (addInvigilatorInstance == null)
+            if (addInvigilatorInstance == null || addInvigilatorInstance.IsDisposed)
             {
                 addInvigilatorInstance = new AddInvigilatorForm();
             }
@@ -35,6 +35,10 @@ namespace WindowsFormsApp1
 
         }
 
+        private void AddInvigilatorForm_Close(object sender, EventArgs e)
+        {
+            addInvigilatorInstance = null;
+        }
        private void SaveButton_Click(object sender, EventArgs e)
         {
             try

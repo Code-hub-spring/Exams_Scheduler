@@ -22,11 +22,16 @@ namespace WindowsFormsApp1.Forms
         internal static ExamCancelForm GetExamCancelFormInstance()
         {
             //This method returns an instance of ExamCancelForm, only if the instance is null.
-            if (instance == null)
+            if (instance == null || instance.IsDisposed)
             {
                 instance = new ExamCancelForm();
             }
             return instance;
+        }
+
+        private void ExamCancelForm_Close(object sender, EventArgs e)
+        {
+            instance = null;
         }
         private void ExamCancelForm_Load(object sender, EventArgs e)
         {

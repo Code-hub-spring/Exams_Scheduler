@@ -21,11 +21,15 @@ namespace WindowsFormsApp1
         internal static ViewExamScheduleDetailsForm GetViewExamScheduleDetailsFormInstance()
         {
             //This method returns an instance of ViewExamScheduleDetailsForm, only if the instance is null.
-            if (instance == null)
+            if (instance == null || instance.IsDisposed)
             {
                 instance = new ViewExamScheduleDetailsForm();
             }
             return instance;
+        }
+        private void ViewExamScheduleDetailsForm_Close(object sender, EventArgs e)
+        {
+            instance = null;
         }
         private void ViewExamScheduleDetailsForm_Load(object sender, EventArgs e)
         {

@@ -16,17 +16,17 @@ namespace WindowsFormsApp1
         internal static AddExamRoomForm GetAddExamRoomFormInstance()
         {
             //This method returns an instance of AddExamRoomForm, only if the instance is null.
-            if (addExamRoomInstance == null)
+            if (addExamRoomInstance == null || addExamRoomInstance.IsDisposed)
             {
                 addExamRoomInstance = new AddExamRoomForm();
             }
             return addExamRoomInstance;
         }
-        private void AddExamRoomFormClosing(object sender, FormClosingEventArgs e)
+        private void AddExamRoomForm_Close(object sender, FormClosingEventArgs e)
         {
             //When the form closes, make the instance null, so the form loads again when called the second time.
             addExamRoomInstance = null;
-        } //AddExamRoomFormClosing() end
+        } //AddExamRoomFormClosing() end 
          
         private void AddExamRoomForm_Load(object sender, EventArgs e)
         {

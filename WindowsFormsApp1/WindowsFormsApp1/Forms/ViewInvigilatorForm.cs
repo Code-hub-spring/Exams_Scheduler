@@ -22,11 +22,17 @@ namespace WindowsFormsApp1.Forms
         public static ViewInvigilatorForm GetViewInvigilatorFormInstance()
         {
             //This method returns an instance of ViewInvigilatorForm, only if the instance is null.
-            if (instance == null)
+            if (instance == null || instance.IsDisposed)
             {
                 instance = new ViewInvigilatorForm();
             }
             return instance;
+        }
+
+        private void ViewInvigilatorForm_Close(object sender, FormClosedEventArgs e)
+        {
+            //When the form is closed, set the instance to null so that it can be created again.
+            instance = null;
         }
         private void ViewInvigilatorForm_Load(object sender, EventArgs e)
         {

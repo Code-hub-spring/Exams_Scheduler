@@ -21,19 +21,22 @@ namespace WindowsFormsApp1.Forms
         public static ViewExamRoomForm GetViewExamRoomFormInstance()
         {
             //This method returns an instance of ViewExamRoomForm, only if the instance is null.
-            if (instance == null)
+            if (instance == null || instance.IsDisposed)
             {
                 instance = new ViewExamRoomForm();
             }
             return instance;
+        }
+
+        private void ViewExamRoomForm_Close(object sender, EventArgs e)
+        {
+            instance = null;
         }
         private void ViewExamRoomForm_Load(object sender, EventArgs e)
         {
             try
             {
                 RoomIntermediary roomIntermediary = new RoomIntermediary();
-
-
                 DataTable dt = roomIntermediary.ListRooms();
 
                 if (dt != null && dt.Rows.Count > 0)
