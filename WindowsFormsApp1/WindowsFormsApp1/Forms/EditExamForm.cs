@@ -78,9 +78,6 @@ namespace WindowsFormsApp1.Forms
         private void LoadCourses()
         {
             DataTable dt = coursesIM.ListCourses();
-            //CourseComboBox.DisplayMember = "CourseName";
-            //CourseComboBox.ValueMember = "CourseID";
-            //CourseComboBox.DataSource = dt;
             if (dt != null)
             {
                 GenericsHelper.LoadComboBox(CourseComboBox, dt, "CourseName", "CourseID");
@@ -88,10 +85,7 @@ namespace WindowsFormsApp1.Forms
         }
         private void LoadRooms()
         {
-            DataTable dt = roomIM.ListRooms(true);
-            //RoomComboBox.DisplayMember = "RoomName";
-            //RoomComboBox.ValueMember = "RoomID";
-            //RoomComboBox.DataSource = dt;
+            DataTable dt = roomIM.ListRooms();
             if (dt != null)
             {
                 GenericsHelper.LoadComboBox(RoomComboBox, dt, "RoomName", "RoomID");
@@ -100,10 +94,7 @@ namespace WindowsFormsApp1.Forms
 
         private void LoadInvigilators()
         {
-            DataTable dt = invIM.GetAllInvigilators(true);
-            //InvigilatorComboBox.DisplayMember = "Name";
-            //InvigilatorComboBox.ValueMember = "InvigilatorID";
-            //InvigilatorComboBox.DataSource = dt;
+            DataTable dt = invIM.GetAllInvigilators();
             if (dt != null)
             {
                 GenericsHelper.LoadComboBox(InvigilatorComboBox, dt, "Name", "InvigilatorID");

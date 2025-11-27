@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\forms\\bookexamroomform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
@@ -31,7 +31,7 @@
       "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\intermediaryclasses\\roomintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\enums\\enumdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\enums\\enumdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\enums\\enumdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -39,7 +39,7 @@
       "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\intermediaryclasses\\coursesintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\interfaces\\iroomintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\interfaces\\iroomintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\interfaces\\iroomintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -51,7 +51,7 @@
       "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\intermediaryclasses\\examscheduleintermediarycs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\bxg69850\\documents\\cis5606\\inclasslabs\\final_project\\windowsformsapp1\\windowsformsapp1\\interfaces\\icourseintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\windowsformsapp1\\interfaces\\icourseintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3240C7D1-59E9-4291-AE72-4506D635CB4B}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\interfaces\\icourseintermediary.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -161,8 +161,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\Helpers\\GenericsHelper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T19:03:36.669Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T19:03:36.669Z"
             },
             {
               "$type": "Document",
@@ -184,7 +183,7 @@
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Forms\\BookExamRoomForm.cs",
               "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\BookExamRoomForm.cs",
               "RelativeToolTip": "WindowsFormsApp1\\Forms\\BookExamRoomForm.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAkwEoAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAFMAAAAAAAAAAAAswGYAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-23T22:01:01.357Z",
               "EditorCaption": ""
@@ -198,8 +197,7 @@
               "ToolTip": "C:\\Users\\bxg69850\\Documents\\CIS5606\\InClassLabs\\Final_Project\\WindowsFormsApp1\\WindowsFormsApp1\\Forms\\EditExamForm.cs [Design]",
               "RelativeToolTip": "WindowsFormsApp1\\Forms\\EditExamForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T00:56:53.783Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-24T00:56:53.783Z"
             },
             {
               "$type": "Document",
@@ -211,8 +209,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\Forms\\EditExamForm.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAwwGEAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T22:19:13.496Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T22:19:13.496Z"
             },
             {
               "$type": "Document",
@@ -224,8 +221,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\IntermediaryClasses\\RoomIntermediary.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T19:06:16.845Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-26T19:06:16.845Z"
             },
             {
               "$type": "Document",
@@ -237,8 +233,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\Enums\\EnumData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T03:28:06.395Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T03:28:06.395Z"
             },
             {
               "$type": "Document",
@@ -250,8 +245,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\IntermediaryClasses\\CoursesIntermediary.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T06:16:39.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T06:16:39.029Z"
             },
             {
               "$type": "Document",
@@ -263,8 +257,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\IntermediaryClasses\\ExamScheduleInterMediarycs.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:36:04.113Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T19:36:04.113Z"
             },
             {
               "$type": "Document",
@@ -276,8 +269,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\IntermediaryClasses\\InvigilatorIntermediary.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T19:05:07.352Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-26T19:05:07.352Z"
             },
             {
               "$type": "Document",
@@ -289,8 +281,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\Interfaces\\IRoomIntermediary.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T03:26:42.343Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T03:26:42.343Z"
             },
             {
               "$type": "Document",
@@ -302,8 +293,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\Interfaces\\ICourseIntermediary.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-27T03:25:16.912Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-27T03:25:16.912Z"
             },
             {
               "$type": "Document",
@@ -315,8 +305,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\DataClasses\\ExamScheduleDataClass.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAIUAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T18:41:40.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T18:41:40.272Z"
             },
             {
               "$type": "Document",
@@ -328,8 +317,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\Models\\ScheduledExamDerived.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-23T19:31:13.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-23T19:31:13.842Z"
             },
             {
               "$type": "Document",
@@ -341,8 +329,7 @@
               "RelativeToolTip": "WindowsFormsApp1\\Models\\ExamBase.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAmwBsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T00:44:51.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-24T00:44:51.055Z"
             },
             {
               "$type": "Document",

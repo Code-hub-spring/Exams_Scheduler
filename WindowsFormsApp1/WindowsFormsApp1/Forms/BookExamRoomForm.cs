@@ -68,17 +68,10 @@ namespace WindowsFormsApp1
         private void LoadCourseFromDB()
         {
             DataTable dataTable = courseIntermediary.ListCourses();
+            DataRow emptyRow = dataTable.NewRow();
+            dataTable.Rows.InsertAt(emptyRow, 0);
             if (dataTable != null)
             {
-                DataRow emptyRow = dataTable.NewRow();
-                //DataRow blank = dt.NewRow();
-                dataTable.Rows.InsertAt(emptyRow, 0);
-                //emptyRow["CourseID"] = 0;
-                //emptyRow["CourseName"] = "-- Select Room --";
-                //emptyRow["CourseNumber"] = 0;
-                //dataTable.Rows.InsertAt(emptyRow, 0);
-
-
                 GenericsHelper.LoadComboBox(CourseComboBox, dataTable, "CourseName", "CourseID");
                 CourseComboBox.SelectedIndex = 0;
             }
@@ -89,7 +82,7 @@ namespace WindowsFormsApp1
             DataTable dt = roomIntermediary.ListRooms();
             DataRow blank = dt.NewRow();
             dt.Rows.InsertAt(blank, 0);
-            ;
+            
             if (dt != null)
             {
                 GenericsHelper.LoadComboBox(RoomComboBox, dt, "RoomName", "RoomID");
@@ -100,18 +93,13 @@ namespace WindowsFormsApp1
         private void LoadInvigilatorsFromDb()
         {
             DataTable dt = invigilatorIntermediary.GetAllInvigilators(true);
+            DataRow blank = dt.NewRow();
+            dt.Rows.InsertAt(blank, 0);
             if (dt != null)
             {
-                DataRow emptyRow = dt.NewRow();
-                emptyRow["InvigilatorID"] = 0;
-                emptyRow["Name"] = "-- Select Room --";   // also wrong text
-                emptyRow["Available"] = false;
-                dt.Rows.InsertAt(emptyRow, 0);
-
                 GenericsHelper.LoadComboBox(InvigilatorComboBox, dt, "Name", "InvigilatorID");
                 InvigilatorComboBox.SelectedIndex = 0;
             }
-    
         }
 
         // When room changes, fill capacity
