@@ -7,6 +7,7 @@ using WindowsFormsApp1.Enums;
 using WindowsFormsApp1.IntermediaryClasses;
 using WindowsFormsApp1.Models;
 using WindowsFormsApp1.Helpers;
+using System.Diagnostics.Eventing.Reader;
 
 namespace WindowsFormsApp1
 {
@@ -18,8 +19,9 @@ namespace WindowsFormsApp1
         private CoursesIntermediary courseIntermediary = new CoursesIntermediary();
         private ScheduledExamDerived scheduledExam = new ScheduledExamDerived();
         internal static BookExamRoomForm instance;
-        private string examType;
+        private string examType="";
         private const int BaseExamHours = 2;
+        ExamBase exam_permission;
 
         public BookExamRoomForm()
         {
@@ -57,9 +59,9 @@ namespace WindowsFormsApp1
             TotalExamHoursLabel.Text = "-";     // initial label
             RoomCapacityTextBox.ReadOnly = true;           // capacity readonly
             // events
-            RoomComboBox.SelectedIndexChanged += RoomComboBox_SelectedIndexChanged;
+            // RoomComboBox.SelectedIndexChanged += RoomComboBox_SelectedIndexChanged;
             SpecialPermissionCheckBox.CheckedChanged += SpecialPermissionCheckBox_CheckedChanged;
-            ScheduleButton.Click += ScheduleButton_Click;
+           // ScheduleButton.Click += ScheduleButton_Click;
         }
 
         //Using generic helper to load courses from DB 
@@ -68,13 +70,26 @@ namespace WindowsFormsApp1
             DataTable dataTable = courseIntermediary.ListCourses();
             if (dataTable != null)
             {
+                DataRow emptyRow = dataTable.NewRow();
+                //DataRow blank = dt.NewRow();
+                dataTable.Rows.InsertAt(emptyRow, 0);
+                //emptyRow["CourseID"] = 0;
+                //emptyRow["CourseName"] = "-- Select Room --";
+                //emptyRow["CourseNumber"] = 0;
+                //dataTable.Rows.InsertAt(emptyRow, 0);
+
+
                 GenericsHelper.LoadComboBox(CourseComboBox, dataTable, "CourseName", "CourseID");
+                CourseComboBox.SelectedIndex = 0;
             }
         }
         //Using generic helper to load Room from DB 
         private void LoadRoomsFromDb()
         {
             DataTable dt = roomIntermediary.ListRooms();
+            DataRow blank = dt.NewRow();
+            dt.Rows.InsertAt(blank, 0);
+            ;
             if (dt != null)
             {
                 GenericsHelper.LoadComboBox(RoomComboBox, dt, "RoomName", "RoomID");
@@ -84,10 +99,17 @@ namespace WindowsFormsApp1
         //Using generic helper to load Invigilator from DB 
         private void LoadInvigilatorsFromDb()
         {
-            DataTable dt = invigilatorIntermediary.GetAllInvigilators();
+            DataTable dt = invigilatorIntermediary.GetAllInvigilators(true);
             if (dt != null)
             {
+                DataRow emptyRow = dt.NewRow();
+                emptyRow["InvigilatorID"] = 0;
+                emptyRow["Name"] = "-- Select Room --";   // also wrong text
+                emptyRow["Available"] = false;
+                dt.Rows.InsertAt(emptyRow, 0);
+
                 GenericsHelper.LoadComboBox(InvigilatorComboBox, dt, "Name", "InvigilatorID");
+                InvigilatorComboBox.SelectedIndex = 0;
             }
     
         }
@@ -120,16 +142,15 @@ namespace WindowsFormsApp1
         private void ScheduleButton_Click(object sender, EventArgs e)
         {
             // Basic validation
-            ExamBase exam_permission;
-            if (ExamTitleTextBox.Text != "")
+           if (ExamTitleTextBox.Text != "")
             {
                 if (examType != "")
                 {
-                    if (CourseComboBox.SelectedItem.ToString() != "")
+                    if (CourseComboBox.SelectedIndex > 0)
                     {
-                        if (RoomComboBox.SelectedItem.ToString() != "")
+                        if (RoomComboBox.SelectedIndex > 0)
                         {
-                            if (InvigilatorComboBox.SelectedItem.ToString() != "")
+                            if (InvigilatorComboBox.SelectedIndex > 0)
                             {
                                 string examTitle = ExamTitleTextBox.Text;
                                 int roomId = Convert.ToInt32(RoomComboBox.SelectedValue);
@@ -138,85 +159,93 @@ namespace WindowsFormsApp1
                                 String courseName = CourseComboBox.Text;
                                 int extraHours = 0;
                              
-
                                 DateTime startTime = ExamStartDateTimePicker.Value;
                                 DateTime endTime = ExamEndDateTimePicker.Value;
-
-                                if (SpecialPermissionCheckBox.Checked)
+                                if (endTime >= startTime)
                                 {
-                                    if (!int.TryParse(ExtraHoursTextBox.Text, out extraHours))
+                                    if (SpecialPermissionCheckBox.Checked)
                                     {
-                                        MessageBox.Show("Please enter valid extra hours (number).",
-                                            "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        if (!int.TryParse(ExtraHoursTextBox.Text, out extraHours))
+                                        {
+                                            MessageBox.Show("Please enter valid extra hours (number).",
+                                                "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                            return;
+                                        }
+                                        else
+                                        {
+                                            exam_permission = new ScheduledExamDerived { ExtraHours = extraHours };
+                                        }
+                                        if (string.IsNullOrWhiteSpace(StudentNameTextBox.Text))
+                                        {
+                                            MessageBox.Show("Please enter student name for special permission.",
+                                                "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                            return;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        exam_permission = new ExamBase();
+                                    }
+                                    TimeSpan duration = exam_permission.CalculateDuration(startTime, endTime); // Call overload method if extra hours added
+                                    if (duration.TotalMinutes <= 0)
+                                    {
+                                        MessageBox.Show("End time must be greater than Start time.",
+                                            "Invalid Time", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else
                                     {
-                                        exam_permission = new ScheduledExamDerived { ExtraHours = extraHours };
+                                        TotalExamHoursLabel.Text = duration.TotalHours.ToString("0.##") + " hours";
                                     }
-                                    if (string.IsNullOrWhiteSpace(StudentNameTextBox.Text))
+                                    int totalMinutes = (int)duration.TotalMinutes;
+                                    ScheduledExamDerived exam = new ScheduledExamDerived
                                     {
-                                        MessageBox.Show("Please enter student name for special permission.",
-                                            "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                        return;
+                                        ExamTitle = examTitle,
+                                        ExamType = examType,
+                                        CourseID = courseId,
+                                        CourseName = courseName,
+                                        RoomID = roomId,
+                                        InvigilatorID = invigilatorId,
+                                        ExamDateTime = ExamDateTimePicker.Value,
+                                        ExamStartTime = startTime,
+                                        ExamEndTime = endTime,
+                                        DurationMinutes = totalMinutes,
+                                        SpecialPermission = SpecialPermissionCheckBox.Checked,
+                                        SpecialStudentName = SpecialPermissionCheckBox.Checked
+                                            ? StudentNameTextBox.Text.Trim()
+                                            : null,
+                                        ExtraHours = extraHours
+                                    };
+                                    try
+                                    {
+                                        int result = examIntermediary.InsertExam(exam);
+                                        if (result > 0)
+                                        {
+                                            // Mark room & invigilator not available
+                                            roomIntermediary.UpdateRoomAvailability(roomId, false);
+                                            invigilatorIntermediary.UpdateInvigilatorAvailability(invigilatorId, false);
+                                            MessageBox.Show("Exam scheduled successfully!",
+                                                "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                            ClearForm();
+                                        }
+                                        else
+                                        {
+                                            MessageBox.Show("Failed to schedule exam.\n" + examIntermediary.LastError,
+                                                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        }
                                     }
-                                }
-                                else
-                                {
-                                    exam_permission = new ExamBase();
-                                }
-                                TimeSpan duration = exam_permission.CalculateDuration(startTime, endTime); // Call overload method if extra hours added
-                                if (duration.TotalMinutes <= 0)
-                                {
-                                    MessageBox.Show("End time must be greater than Start time.",
-                                        "Invalid Time", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    return;
-                                }
-                                else
-                                {
-                                    TotalExamHoursLabel.Text = duration.TotalHours.ToString("0.##") + " hours";
-                                }
-                                int totalMinutes = (int)duration.TotalMinutes;
-                                ScheduledExamDerived exam = new ScheduledExamDerived
-                                {
-                                    ExamTitle = examTitle,
-                                    ExamType = examType,
-                                    CourseID = courseId,
-                                    CourseName = courseName,
-                                    RoomID = roomId,
-                                    InvigilatorID = invigilatorId,
-                                    ExamDateTime = ExamDateTimePicker.Value,
-                                    ExamStartTime = startTime,
-                                    ExamEndTime = endTime,
-                                    DurationMinutes = totalMinutes,
-                                    SpecialPermission = SpecialPermissionCheckBox.Checked,
-                                    SpecialStudentName = SpecialPermissionCheckBox.Checked
-                                        ? StudentNameTextBox.Text.Trim()
-                                        : null,
-                                    ExtraHours = extraHours
-                                };
-                                try
-                                {
-                                    int result = examIntermediary.InsertExam(exam);
-                                    if (result > 0)
+                                    catch (Exception ex)
                                     {
-                                        // Mark room & invigilator not available
-                                        roomIntermediary.UpdateRoomAvailability(roomId, false);
-                                        invigilatorIntermediary.UpdateInvigilatorAvailability(invigilatorId, false);
-                                        MessageBox.Show("Exam scheduled successfully!",
-                                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                        ClearForm();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Failed to schedule exam.\n" + examIntermediary.LastError,
+                                        MessageBox.Show("Unexpected error: " + ex.Message,
                                             "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                     }
                                 }
-                                catch (Exception ex)
+                                else
                                 {
-                                    MessageBox.Show("Unexpected error: " + ex.Message,
-                                        "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    TotalExamHoursLabel.Text = "Invalid Time";
+                                    MessageBox.Show("End time must be greater than Start time.", "Invalid Time",
+                                                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
                                 }
                             }
                             else
@@ -268,7 +297,6 @@ namespace WindowsFormsApp1
         private void MidTermRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             RadioButton radioButton = (RadioButton)sender;
-           
             switch(radioButton.Name)
             {
                 case "MidTermRadioButton":
@@ -278,10 +306,10 @@ namespace WindowsFormsApp1
                     examType = ExamType.Final.ToString(); 
                     break;
                 case "RetakeRadioButton":
-                    examType = ExamType.Retake.ToString(); ;
+                    examType = ExamType.Retake.ToString();
                     break;
                 case "SpecialRadioButton":
-                    examType = ExamType.Special.ToString(); ;
+                    examType = ExamType.Special.ToString(); 
                     break;
                 default:
                     examType = "";

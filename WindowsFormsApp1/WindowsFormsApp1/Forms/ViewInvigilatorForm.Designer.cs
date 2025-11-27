@@ -41,6 +41,7 @@
             this.viewInvigilatorDataGridView.RowTemplate.Height = 24;
             this.viewInvigilatorDataGridView.Size = new System.Drawing.Size(671, 353);
             this.viewInvigilatorDataGridView.TabIndex = 0;
+            this.viewInvigilatorDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewInvigilatorDataGridView_CellEndEdit);
             // 
             // ViewInvigilatorForm
             // 

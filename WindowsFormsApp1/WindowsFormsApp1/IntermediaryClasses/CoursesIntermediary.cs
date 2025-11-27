@@ -6,12 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1.DataClasses;
+using WindowsFormsApp1.Interfaces;
 
 //created by Bhagya G
 namespace WindowsFormsApp1.IntermediaryClasses
 {
    
-    internal class CoursesIntermediary
+    internal class CoursesIntermediary:ICourseIntermediary
     {
         public string LastError { get; set; }
         public DataTable ListCourses()

@@ -14,11 +14,11 @@ namespace WindowsFormsApp1.Forms
     public partial class ViewInvigilatorForm : Form
     {
         static ViewInvigilatorForm instance;
+        InvigilatorIntermediary invigilatorIntermediary = new InvigilatorIntermediary();
         public ViewInvigilatorForm()
         {
             InitializeComponent();
         }
-
         public static ViewInvigilatorForm GetViewInvigilatorFormInstance()
         {
             //This method returns an instance of ViewInvigilatorForm, only if the instance is null.
@@ -28,7 +28,6 @@ namespace WindowsFormsApp1.Forms
             }
             return instance;
         }
-
         private void ViewInvigilatorForm_Close(object sender, FormClosedEventArgs e)
         {
             //When the form is closed, set the instance to null so that it can be created again.
@@ -38,10 +37,7 @@ namespace WindowsFormsApp1.Forms
         {
             try
             {
-                InvigilatorIntermediary invigilatorIntermediary = new InvigilatorIntermediary();
-
                 DataTable dt = invigilatorIntermediary.GetAllInvigilators();
-
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     viewInvigilatorDataGridView.DataSource = dt;
@@ -56,6 +52,34 @@ namespace WindowsFormsApp1.Forms
             {
                 MessageBox.Show("Error Invigilators:\n" + ex.Message,
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void viewInvigilatorDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (viewInvigilatorDataGridView.Columns[e.ColumnIndex].Name =="Available")
+            {
+                try
+                {
+                    int invId = Convert.ToInt32(viewInvigilatorDataGridView.Rows[e.RowIndex].Cells["InvigilatorID"].Value);
+                    bool invAvailability = Convert.ToBoolean(viewInvigilatorDataGridView.Rows[e.RowIndex].Cells["Available"].Value);
+
+                    bool updated = invigilatorIntermediary.UpdateInvigilatorAvailability(invId, invAvailability);
+                    if (updated)
+                    {
+                        MessageBox.Show("Invigilatoe availability updated.",
+                           "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Update Failed.",
+                          "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

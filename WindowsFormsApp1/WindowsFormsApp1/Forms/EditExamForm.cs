@@ -69,7 +69,7 @@ namespace WindowsFormsApp1.Forms
         private void LoadExamList()
         {
             DataTable dt = examIM.SelectExams();
-          
+    
             ExamListComboBox.DisplayMember = "ExamTitle";
             ExamListComboBox.ValueMember = "ExamID";
             ExamListComboBox.DataSource = dt;
@@ -88,7 +88,7 @@ namespace WindowsFormsApp1.Forms
         }
         private void LoadRooms()
         {
-            DataTable dt = roomIM.ListRooms();
+            DataTable dt = roomIM.ListRooms(true);
             //RoomComboBox.DisplayMember = "RoomName";
             //RoomComboBox.ValueMember = "RoomID";
             //RoomComboBox.DataSource = dt;
@@ -100,7 +100,7 @@ namespace WindowsFormsApp1.Forms
 
         private void LoadInvigilators()
         {
-            DataTable dt = invIM.GetAllInvigilators();
+            DataTable dt = invIM.GetAllInvigilators(true);
             //InvigilatorComboBox.DisplayMember = "Name";
             //InvigilatorComboBox.ValueMember = "InvigilatorID";
             //InvigilatorComboBox.DataSource = dt;

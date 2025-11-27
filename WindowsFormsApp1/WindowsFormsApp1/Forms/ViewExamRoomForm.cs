@@ -14,6 +14,7 @@ namespace WindowsFormsApp1.Forms
     public partial class ViewExamRoomForm : Form
     {
         internal static ViewExamRoomForm instance;
+        RoomIntermediary roomIntermediary = new RoomIntermediary();
         public ViewExamRoomForm()
         {
             InitializeComponent();
@@ -36,9 +37,7 @@ namespace WindowsFormsApp1.Forms
         {
             try
             {
-                RoomIntermediary roomIntermediary = new RoomIntermediary();
                 DataTable dt = roomIntermediary.ListRooms();
-
                 if (dt != null && dt.Rows.Count > 0)
                 {
                     viewExamRoomdataGridView.DataSource = dt;
@@ -53,6 +52,29 @@ namespace WindowsFormsApp1.Forms
             {
                 MessageBox.Show("Error in rooms:\n" + ex.Message,
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void viewExamRoomdataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (viewExamRoomdataGridView.Columns[e.ColumnIndex].Name == "Available")
+            {
+                try
+                {
+                    int roomId = Convert.ToInt32(viewExamRoomdataGridView.Rows[e.RowIndex].Cells["RoomID"].Value);
+                    bool roomAvailable = Convert.ToBoolean(viewExamRoomdataGridView.Rows[e.RowIndex].Cells["Available"].Value);
+                     bool updated = roomIntermediary.UpdateRoomAvailability(roomId, roomAvailable);
+                    if (updated)
+                        MessageBox.Show("Room availability updated.",
+                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                        MessageBox.Show("Failed to update.",
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

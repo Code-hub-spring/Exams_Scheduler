@@ -41,6 +41,7 @@
             this.viewExamRoomdataGridView.RowTemplate.Height = 24;
             this.viewExamRoomdataGridView.Size = new System.Drawing.Size(732, 412);
             this.viewExamRoomdataGridView.TabIndex = 0;
+            this.viewExamRoomdataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewExamRoomdataGridView_CellEndEdit);
             // 
             // ViewExamRoomForm
             // 
