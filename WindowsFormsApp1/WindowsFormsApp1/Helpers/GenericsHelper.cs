@@ -9,6 +9,7 @@ namespace WindowsFormsApp1.Helpers
 {
     public static class GenericsHelper
     {
+        //this generic function for combo box data, depends on type it will load the data
         public static void LoadComboBox<T>(ComboBox combo, T items, string display, string value)
         {
             combo.DataSource= items;

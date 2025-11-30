@@ -56,6 +56,7 @@ namespace WindowsFormsApp1
                             if (result > 0)
                             {
                                 MessageBox.Show("Invigilator Added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                ResultLabel.Text = "Invigilator Added successfully.";
                                 ClearForm();
                             }
                             else

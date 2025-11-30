@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
         }
         private void BookExamRoomForm_Load(object sender, EventArgs e)
         {
-            //LoadCoursesFromEnum();
+           // onload of form should load combo box data,
             LoadRoomsFromDb();
             LoadInvigilatorsFromDb();
             LoadCourseFromDB();
@@ -58,10 +58,8 @@ namespace WindowsFormsApp1
             SpecialPermGroupBox.Enabled = false;          // special permission details off by default
             TotalExamHoursLabel.Text = "-";     // initial label
             RoomCapacityTextBox.ReadOnly = true;           // capacity readonly
-            // events
-            // RoomComboBox.SelectedIndexChanged += RoomComboBox_SelectedIndexChanged;
             SpecialPermissionCheckBox.CheckedChanged += SpecialPermissionCheckBox_CheckedChanged;
-           // ScheduleButton.Click += ScheduleButton_Click;
+
         }
 
         //Using generic helper to load courses from DB 
@@ -76,7 +74,7 @@ namespace WindowsFormsApp1
                 CourseComboBox.SelectedIndex = 0;
             }
         }
-        //Using generic helper to load Room from DB 
+        //Using generic helper to load room data
         private void LoadRoomsFromDb()
         {
             DataTable dt = roomIntermediary.ListRooms();
@@ -89,7 +87,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        //Using generic helper to load Invigilator from DB 
+        //Using generic helper to load Invigilator 
         private void LoadInvigilatorsFromDb()
         {
             DataTable dt = invigilatorIntermediary.GetAllInvigilators(true);
@@ -102,7 +100,7 @@ namespace WindowsFormsApp1
             }
         }
 
-        // When room changes, fill capacity
+        // When room changes, capacity field has to fill
         private void RoomComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (RoomComboBox.SelectedValue == null)
@@ -145,8 +143,10 @@ namespace WindowsFormsApp1
                                 int invigilatorId = Convert.ToInt32(InvigilatorComboBox.SelectedValue);
                                 int courseId = Convert.ToInt32(CourseComboBox.SelectedValue);
                                 String courseName = CourseComboBox.Text;
-                                int extraHours = 0;
-                             
+                                //int extraHours = 0;
+
+                                //implementing Lambda to get extra hours
+                                int extraHours = int.TryParse(ExtraHoursTextBox.Text, out var h) ? h : 0;
                                 DateTime startTime = ExamStartDateTimePicker.Value;
                                 DateTime endTime = ExamEndDateTimePicker.Value;
                                 if (endTime >= startTime)
@@ -174,7 +174,13 @@ namespace WindowsFormsApp1
                                     {
                                         exam_permission = new ExamBase();
                                     }
-                                    TimeSpan duration = exam_permission.CalculateDuration(startTime, endTime); // Call overload method if extra hours added
+                                   // TimeSpan duration = exam_permission.CalculateDuration(startTime, endTime); // Call overload method if extra hours added
+                                   // implement the Lambda function to get the duaration and call CalculateDuration func
+                                    var duration = ((Func<TimeSpan>)(() =>
+                                    {
+                                        return exam_permission.CalculateDuration(startTime, endTime);
+                                    }))();
+
                                     if (duration.TotalMinutes <= 0)
                                     {
                                         MessageBox.Show("End time must be greater than Start time.",
@@ -277,8 +283,8 @@ namespace WindowsFormsApp1
             SpecialPermGroupBox.Enabled = SpecialPermissionCheckBox.Checked;
             if (!SpecialPermissionCheckBox.Checked)
             {
-                StudentNameTextBox.Clear(); // student name
-                ExtraHoursTextBox.Clear(); // extra hours
+                StudentNameTextBox.Clear();
+                ExtraHoursTextBox.Clear(); 
             }
         }
 

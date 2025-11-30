@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.viewInvigilatorDataGridView = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.viewInvigilatorDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,22 +44,35 @@
             this.viewInvigilatorDataGridView.TabIndex = 0;
             this.viewInvigilatorDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.viewInvigilatorDataGridView_CellEndEdit);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(304, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(156, 22);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "View Invigilators";
+            // 
             // ViewInvigilatorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.viewInvigilatorDataGridView);
             this.Name = "ViewInvigilatorForm";
             this.Text = "ViewInvigilatorForm";
             this.Load += new System.EventHandler(this.ViewInvigilatorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.viewInvigilatorDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView viewInvigilatorDataGridView;
+        private System.Windows.Forms.Label label1;
     }
 }

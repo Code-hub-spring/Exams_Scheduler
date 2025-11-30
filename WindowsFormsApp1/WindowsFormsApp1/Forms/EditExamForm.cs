@@ -28,7 +28,7 @@ namespace WindowsFormsApp1.Forms
         public EditExamForm()
         {
             InitializeComponent();
-        }
+        }//EditExamForm()
         internal static EditExamForm GetEditExamFormInstance()
         {
             //This method returns an instance of EditExamForm, only if the instance is null.
@@ -64,7 +64,7 @@ namespace WindowsFormsApp1.Forms
              ExamListComboBox.SelectedIndexChanged += cmbExamList_SelectedIndexChanged;
             RoomComboBox.SelectedIndexChanged += cmbRoom_SelectedIndexChanged;
             chkSpecial.CheckedChanged += chkSpecial_CheckedChanged;
-        }
+        }//EditExamForm_Load()
         // load exam list
         private void LoadExamList()
         {
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1.Forms
             ExamListComboBox.ValueMember = "ExamID";
             ExamListComboBox.DataSource = dt;
 
-        }
+        }//LoadExamList()
         private void LoadCourses()
         {
             DataTable dt = coursesIM.ListCourses();
@@ -82,7 +82,7 @@ namespace WindowsFormsApp1.Forms
             {
                 GenericsHelper.LoadComboBox(CourseComboBox, dt, "CourseName", "CourseID");
             }
-        }
+        }// end LoadCourses()
         private void LoadRooms()
         {
             DataTable dt = roomIM.ListRooms();
@@ -90,7 +90,7 @@ namespace WindowsFormsApp1.Forms
             {
                 GenericsHelper.LoadComboBox(RoomComboBox, dt, "RoomName", "RoomID");
             }
-        }
+        }// end LoadRooms()
 
         private void LoadInvigilators()
         {
@@ -99,9 +99,8 @@ namespace WindowsFormsApp1.Forms
             {
                 GenericsHelper.LoadComboBox(InvigilatorComboBox, dt, "Name", "InvigilatorID");
             }
-        }
-// on change of combo box
-
+        }// end LoadInvigilators()
+        // on change of combo box
         private void cmbExamList_SelectedIndexChanged(object sender, EventArgs e)
         {
             ExamBase exam_permission;
@@ -149,7 +148,7 @@ namespace WindowsFormsApp1.Forms
             EndTimeDateTimePicker.Value = endDateTime;
 
             int extraHours = row["ExtraHours"] != DBNull.Value
-        ? Convert.ToInt32(row["ExtraHours"]): 0;
+         ? Convert.ToInt32(row["ExtraHours"]): 0;
             ExtraHoursTextBox.Text = extraHours.ToString();
 
             TimeSpan duration = TimeSpan.FromMinutes(Convert.ToInt32(row["DurationMinutes"]));
@@ -185,14 +184,7 @@ namespace WindowsFormsApp1.Forms
                 ExtraHoursTextBox.Clear();
             }
         }
-        //calculate the total hpurs for exam
-        //private void UpdateDuration()
-        //{
-        //    int extra = 0;
-        //    int.TryParse(ExtraHoursTextBox.Text, out extra);
-        //    lblDuration.Text = $"{BaseDuration + extra} Hours";
-        //}
-    // update the exam data
+        
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (SelectedExamID == 0)
@@ -235,7 +227,7 @@ namespace WindowsFormsApp1.Forms
                 else
                     MessageBox.Show("Error: " + examIM.LastError);
             }
-        }
+        }//btnUpdate_Click
 
         private void btnCancel_Click(object sender, EventArgs e)
         {

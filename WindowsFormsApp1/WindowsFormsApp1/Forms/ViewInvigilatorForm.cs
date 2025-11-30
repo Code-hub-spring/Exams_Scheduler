@@ -67,7 +67,7 @@ namespace WindowsFormsApp1.Forms
                     bool updated = invigilatorIntermediary.UpdateInvigilatorAvailability(invId, invAvailability);
                     if (updated)
                     {
-                        MessageBox.Show("Invigilatoe availability updated.",
+                        MessageBox.Show("Invigilator availability updated.",
                            "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else

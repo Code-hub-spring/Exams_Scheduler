@@ -17,8 +17,6 @@ namespace WindowsFormsApp1.Forms
         {
             InitializeComponent();
         }
-
-
         internal static ExamCancelForm GetExamCancelFormInstance()
         {
             //This method returns an instance of ExamCancelForm, only if the instance is null.
@@ -48,7 +46,6 @@ namespace WindowsFormsApp1.Forms
             ExamIdComboBox.DisplayMember = "ExamTitle";
             ExamIdComboBox.ValueMember = "ExamID";
         }
-
         // WHEN USER SELECTS AN EXAM
         private void ExamIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -60,15 +57,12 @@ namespace WindowsFormsApp1.Forms
             if (exam != null)
             {
                 int courseId = Convert.ToInt32(exam["CourseID"]);
-                //EnumData courseEnum = (EnumData)courseId;
-                //CourseNameTextBox.Text = EnumHelper.GetDescription(courseEnum);
                 CourseNameTextBox.Text = exam["CourseName"].ToString();
                 RoomNameTextBox.Text = exam["RoomName"].ToString();
                 InvigilatorNameTextBox.Text = exam["InvigilatorName"].ToString();
-
                 ExamDateTextBox.Text = Convert.ToDateTime(exam["ExamDate"]).ToString("yyyy-MM-dd");
 
-                textBox5.Text = exam["ExamStartTime"].ToString();
+                startTimeTextBox.Text = exam["ExamStartTime"].ToString();
                 EndTimeTextBox.Text = exam["ExamEndTime"].ToString();
             }
         }
@@ -81,7 +75,6 @@ namespace WindowsFormsApp1.Forms
                 MessageBox.Show("Select an Exam to cancel!", "Warning");
                 return;
             }
-
             int examId = Convert.ToInt32(ExamIdComboBox.SelectedValue);
             DataRow exam = examIM.GetExamById(examId);
            
@@ -90,13 +83,11 @@ namespace WindowsFormsApp1.Forms
                 MessageBox.Show("Cannot fetch exam details.", "Error");
                 return;
             }
-
             int roomId = Convert.ToInt32(exam["RoomID"]);
             int invId = Convert.ToInt32(exam["InvigilatorID"]);
 
             // Call DeleteExam method which calls the stored procedure
             int result = examIM.DeleteExam(examId, roomId, invId);
-            MessageBox.Show(result.ToString(), "shxjs");
             if (result >= 0)
             {
                 MessageBox.Show("Exam cancelled successfully!", "Success");
@@ -115,7 +106,7 @@ namespace WindowsFormsApp1.Forms
             RoomNameTextBox.Text = "";
             InvigilatorNameTextBox.Text = "";
             ExamDateTextBox.Text = "";
-            textBox5.Text = "";
+            startTimeTextBox.Text = "";
             EndTimeTextBox.Text = "";
         }
     }

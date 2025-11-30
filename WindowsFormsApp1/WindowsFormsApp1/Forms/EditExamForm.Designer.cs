@@ -49,6 +49,7 @@
             this.SpecialRadioButton = new System.Windows.Forms.RadioButton();
             this.FinalRadioButton = new System.Windows.Forms.RadioButton();
             this.MidTermRadioButton = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.grpRoom.SuspendLayout();
             this.grpInvigilator.SuspendLayout();
             this.grpDateTime.SuspendLayout();
@@ -59,16 +60,17 @@
             // lblSelectExam
             // 
             this.lblSelectExam.AutoSize = true;
-            this.lblSelectExam.Location = new System.Drawing.Point(40, 25);
+            this.lblSelectExam.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectExam.Location = new System.Drawing.Point(40, 52);
             this.lblSelectExam.Name = "lblSelectExam";
-            this.lblSelectExam.Size = new System.Drawing.Size(85, 16);
+            this.lblSelectExam.Size = new System.Drawing.Size(128, 16);
             this.lblSelectExam.TabIndex = 0;
-            this.lblSelectExam.Text = "Select Exam:";
+            this.lblSelectExam.Text = "Select The Exam:";
             // 
             // ExamListComboBox
             // 
             this.ExamListComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ExamListComboBox.Location = new System.Drawing.Point(160, 22);
+            this.ExamListComboBox.Location = new System.Drawing.Point(160, 52);
             this.ExamListComboBox.Name = "ExamListComboBox";
             this.ExamListComboBox.Size = new System.Drawing.Size(250, 24);
             this.ExamListComboBox.TabIndex = 1;
@@ -80,9 +82,10 @@
             this.grpRoom.Controls.Add(this.lblCapacity);
             this.grpRoom.Controls.Add(this.RoomComboBox);
             this.grpRoom.Controls.Add(this.lblRoom);
-            this.grpRoom.Location = new System.Drawing.Point(33, 150);
+            this.grpRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpRoom.Location = new System.Drawing.Point(38, 216);
             this.grpRoom.Name = "grpRoom";
-            this.grpRoom.Size = new System.Drawing.Size(447, 99);
+            this.grpRoom.Size = new System.Drawing.Size(380, 99);
             this.grpRoom.TabIndex = 3;
             this.grpRoom.TabStop = false;
             this.grpRoom.Text = "Room Information";
@@ -100,7 +103,7 @@
             this.lblCapacity.AutoSize = true;
             this.lblCapacity.Location = new System.Drawing.Point(20, 68);
             this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(63, 16);
+            this.lblCapacity.Size = new System.Drawing.Size(72, 16);
             this.lblCapacity.TabIndex = 2;
             this.lblCapacity.Text = "Capacity:";
             // 
@@ -117,16 +120,17 @@
             this.lblRoom.AutoSize = true;
             this.lblRoom.Location = new System.Drawing.Point(20, 33);
             this.lblRoom.Name = "lblRoom";
-            this.lblRoom.Size = new System.Drawing.Size(47, 16);
+            this.lblRoom.Size = new System.Drawing.Size(52, 16);
             this.lblRoom.TabIndex = 0;
             this.lblRoom.Text = "Room:";
             // 
             // grpInvigilator
             // 
             this.grpInvigilator.Controls.Add(this.InvigilatorComboBox);
-            this.grpInvigilator.Location = new System.Drawing.Point(30, 255);
+            this.grpInvigilator.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpInvigilator.Location = new System.Drawing.Point(467, 216);
             this.grpInvigilator.Name = "grpInvigilator";
-            this.grpInvigilator.Size = new System.Drawing.Size(450, 70);
+            this.grpInvigilator.Size = new System.Drawing.Size(396, 99);
             this.grpInvigilator.TabIndex = 4;
             this.grpInvigilator.TabStop = false;
             this.grpInvigilator.Text = "Invigilator";
@@ -136,7 +140,7 @@
             this.InvigilatorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.InvigilatorComboBox.Location = new System.Drawing.Point(20, 30);
             this.InvigilatorComboBox.Name = "InvigilatorComboBox";
-            this.InvigilatorComboBox.Size = new System.Drawing.Size(400, 24);
+            this.InvigilatorComboBox.Size = new System.Drawing.Size(334, 24);
             this.InvigilatorComboBox.TabIndex = 0;
             // 
             // grpDateTime
@@ -146,6 +150,7 @@
             this.grpDateTime.Controls.Add(this.StartTimedateTimePicker);
             this.grpDateTime.Controls.Add(this.label1);
             this.grpDateTime.Controls.Add(this.ExamDateTime);
+            this.grpDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDateTime.Location = new System.Drawing.Point(30, 331);
             this.grpDateTime.Name = "grpDateTime";
             this.grpDateTime.Size = new System.Drawing.Size(647, 120);
@@ -156,7 +161,7 @@
             // EndTimeDateTimePicker
             // 
             this.EndTimeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.EndTimeDateTimePicker.Location = new System.Drawing.Point(370, 87);
+            this.EndTimeDateTimePicker.Location = new System.Drawing.Point(424, 86);
             this.EndTimeDateTimePicker.Name = "EndTimeDateTimePicker";
             this.EndTimeDateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.EndTimeDateTimePicker.TabIndex = 4;
@@ -165,16 +170,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(299, 91);
+            this.label2.Location = new System.Drawing.Point(333, 87);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 16);
+            this.label2.Size = new System.Drawing.Size(73, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "End Time";
             // 
             // StartTimedateTimePicker
             // 
             this.StartTimedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.StartTimedateTimePicker.Location = new System.Drawing.Point(84, 86);
+            this.StartTimedateTimePicker.Location = new System.Drawing.Point(94, 86);
             this.StartTimedateTimePicker.Name = "StartTimedateTimePicker";
             this.StartTimedateTimePicker.Size = new System.Drawing.Size(200, 22);
             this.StartTimedateTimePicker.TabIndex = 2;
@@ -185,7 +190,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 87);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
+            this.label1.Size = new System.Drawing.Size(78, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Start Time";
             // 
@@ -201,9 +206,10 @@
             // chkSpecial
             // 
             this.chkSpecial.AutoSize = true;
-            this.chkSpecial.Location = new System.Drawing.Point(30, 457);
+            this.chkSpecial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkSpecial.Location = new System.Drawing.Point(30, 466);
             this.chkSpecial.Name = "chkSpecial";
-            this.chkSpecial.Size = new System.Drawing.Size(152, 20);
+            this.chkSpecial.Size = new System.Drawing.Size(171, 20);
             this.chkSpecial.TabIndex = 6;
             this.chkSpecial.Text = "Special Permission?";
             this.chkSpecial.UseVisualStyleBackColor = true;
@@ -215,6 +221,7 @@
             this.grpSpecial.Controls.Add(this.lblExtraHours);
             this.grpSpecial.Controls.Add(this.StudentNameTextBox);
             this.grpSpecial.Controls.Add(this.lblStudentName);
+            this.grpSpecial.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpSpecial.Location = new System.Drawing.Point(30, 501);
             this.grpSpecial.Name = "grpSpecial";
             this.grpSpecial.Size = new System.Drawing.Size(450, 120);
@@ -235,7 +242,7 @@
             this.lblExtraHours.AutoSize = true;
             this.lblExtraHours.Location = new System.Drawing.Point(20, 78);
             this.lblExtraHours.Name = "lblExtraHours";
-            this.lblExtraHours.Size = new System.Drawing.Size(79, 16);
+            this.lblExtraHours.Size = new System.Drawing.Size(91, 16);
             this.lblExtraHours.TabIndex = 2;
             this.lblExtraHours.Text = "Extra Hours:";
             // 
@@ -251,30 +258,33 @@
             this.lblStudentName.AutoSize = true;
             this.lblStudentName.Location = new System.Drawing.Point(20, 38);
             this.lblStudentName.Name = "lblStudentName";
-            this.lblStudentName.Size = new System.Drawing.Size(95, 16);
+            this.lblStudentName.Size = new System.Drawing.Size(108, 16);
             this.lblStudentName.TabIndex = 0;
             this.lblStudentName.Text = "Student Name:";
             // 
             // lblDuration
             // 
             this.lblDuration.AutoSize = true;
+            this.lblDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDuration.Location = new System.Drawing.Point(157, 638);
             this.lblDuration.Name = "lblDuration";
-            this.lblDuration.Size = new System.Drawing.Size(53, 16);
+            this.lblDuration.Size = new System.Drawing.Size(60, 16);
             this.lblDuration.TabIndex = 9;
             this.lblDuration.Text = "0 Hours";
             // 
             // labelDurationText
             // 
             this.labelDurationText.AutoSize = true;
+            this.labelDurationText.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDurationText.Location = new System.Drawing.Point(31, 638);
             this.labelDurationText.Name = "labelDurationText";
-            this.labelDurationText.Size = new System.Drawing.Size(94, 16);
+            this.labelDurationText.Size = new System.Drawing.Size(109, 16);
             this.labelDurationText.TabIndex = 8;
             this.labelDurationText.Text = "Total Duration:";
             // 
             // UpdateButton
             // 
+            this.UpdateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateButton.Location = new System.Drawing.Point(30, 680);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(110, 30);
@@ -285,6 +295,7 @@
             // 
             // CancelButton
             // 
+            this.CancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CancelButton.Location = new System.Drawing.Point(183, 680);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(110, 30);
@@ -296,16 +307,17 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 120);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(35, 174);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 16);
+            this.label3.Size = new System.Drawing.Size(101, 16);
             this.label3.TabIndex = 13;
             this.label3.Text = "Course Name";
             // 
             // CourseComboBox
             // 
             this.CourseComboBox.FormattingEnabled = true;
-            this.CourseComboBox.Location = new System.Drawing.Point(150, 120);
+            this.CourseComboBox.Location = new System.Drawing.Point(160, 171);
             this.CourseComboBox.Name = "CourseComboBox";
             this.CourseComboBox.Size = new System.Drawing.Size(244, 24);
             this.CourseComboBox.TabIndex = 14;
@@ -316,9 +328,10 @@
             this.groupBox1.Controls.Add(this.SpecialRadioButton);
             this.groupBox1.Controls.Add(this.FinalRadioButton);
             this.groupBox1.Controls.Add(this.MidTermRadioButton);
-            this.groupBox1.Location = new System.Drawing.Point(34, 60);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(34, 99);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(634, 54);
+            this.groupBox1.Size = new System.Drawing.Size(634, 52);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Exam Type";
@@ -328,7 +341,7 @@
             this.RetakeRadioButton.AutoSize = true;
             this.RetakeRadioButton.Location = new System.Drawing.Point(420, 20);
             this.RetakeRadioButton.Name = "RetakeRadioButton";
-            this.RetakeRadioButton.Size = new System.Drawing.Size(82, 20);
+            this.RetakeRadioButton.Size = new System.Drawing.Size(89, 20);
             this.RetakeRadioButton.TabIndex = 0;
             this.RetakeRadioButton.TabStop = true;
             this.RetakeRadioButton.Text = "Re-Take";
@@ -340,7 +353,7 @@
             this.SpecialRadioButton.AutoSize = true;
             this.SpecialRadioButton.Location = new System.Drawing.Point(277, 20);
             this.SpecialRadioButton.Name = "SpecialRadioButton";
-            this.SpecialRadioButton.Size = new System.Drawing.Size(74, 20);
+            this.SpecialRadioButton.Size = new System.Drawing.Size(81, 20);
             this.SpecialRadioButton.TabIndex = 0;
             this.SpecialRadioButton.TabStop = true;
             this.SpecialRadioButton.Text = "Special";
@@ -352,7 +365,7 @@
             this.FinalRadioButton.AutoSize = true;
             this.FinalRadioButton.Location = new System.Drawing.Point(149, 21);
             this.FinalRadioButton.Name = "FinalRadioButton";
-            this.FinalRadioButton.Size = new System.Drawing.Size(57, 20);
+            this.FinalRadioButton.Size = new System.Drawing.Size(62, 20);
             this.FinalRadioButton.TabIndex = 0;
             this.FinalRadioButton.TabStop = true;
             this.FinalRadioButton.Text = "Final";
@@ -364,16 +377,27 @@
             this.MidTermRadioButton.AutoSize = true;
             this.MidTermRadioButton.Location = new System.Drawing.Point(13, 20);
             this.MidTermRadioButton.Name = "MidTermRadioButton";
-            this.MidTermRadioButton.Size = new System.Drawing.Size(85, 20);
+            this.MidTermRadioButton.Size = new System.Drawing.Size(93, 20);
             this.MidTermRadioButton.TabIndex = 0;
             this.MidTermRadioButton.TabStop = true;
             this.MidTermRadioButton.Text = "Mid Term";
             this.MidTermRadioButton.UseVisualStyleBackColor = true;
             this.MidTermRadioButton.CheckedChanged += new System.EventHandler(this.MidTermRadioButton_CheckedChanged);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(336, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(206, 25);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Edit Exam Schedule";
+            // 
             // EditExamForm
             // 
-            this.ClientSize = new System.Drawing.Size(729, 752);
+            this.ClientSize = new System.Drawing.Size(926, 752);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CourseComboBox);
             this.Controls.Add(this.label3);
@@ -439,6 +463,7 @@
         private System.Windows.Forms.RadioButton SpecialRadioButton;
         private System.Windows.Forms.RadioButton FinalRadioButton;
         private System.Windows.Forms.RadioButton MidTermRadioButton;
+        private System.Windows.Forms.Label label4;
     }
     }
 

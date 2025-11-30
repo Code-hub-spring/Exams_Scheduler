@@ -60,6 +60,7 @@
             this.SpecialRadioButton = new System.Windows.Forms.RadioButton();
             this.FinalRadioButton = new System.Windows.Forms.RadioButton();
             this.MidTermRadioButton = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
             this.SpecialPermGroupBox.SuspendLayout();
             this.ExamTypeGroupBox.SuspendLayout();
             this.SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(87, 138);
+            this.label1.Location = new System.Drawing.Point(87, 203);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 16);
             this.label1.TabIndex = 0;
@@ -79,7 +80,7 @@
             this.CourseComboBox.FormattingEnabled = true;
             this.CourseComboBox.Items.AddRange(new object[] {
             "----select----"});
-            this.CourseComboBox.Location = new System.Drawing.Point(236, 135);
+            this.CourseComboBox.Location = new System.Drawing.Point(243, 200);
             this.CourseComboBox.Name = "CourseComboBox";
             this.CourseComboBox.Size = new System.Drawing.Size(186, 24);
             this.CourseComboBox.TabIndex = 1;
@@ -88,7 +89,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(87, 203);
+            this.label2.Location = new System.Drawing.Point(87, 258);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 16);
             this.label2.TabIndex = 2;
@@ -97,7 +98,7 @@
             // RoomComboBox
             // 
             this.RoomComboBox.FormattingEnabled = true;
-            this.RoomComboBox.Location = new System.Drawing.Point(236, 203);
+            this.RoomComboBox.Location = new System.Drawing.Point(243, 255);
             this.RoomComboBox.Name = "RoomComboBox";
             this.RoomComboBox.Size = new System.Drawing.Size(186, 24);
             this.RoomComboBox.TabIndex = 3;
@@ -107,7 +108,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(462, 206);
+            this.label3.Location = new System.Drawing.Point(554, 263);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 16);
             this.label3.TabIndex = 4;
@@ -115,7 +116,7 @@
             // 
             // RoomCapacityTextBox
             // 
-            this.RoomCapacityTextBox.Location = new System.Drawing.Point(619, 205);
+            this.RoomCapacityTextBox.Location = new System.Drawing.Point(692, 263);
             this.RoomCapacityTextBox.Name = "RoomCapacityTextBox";
             this.RoomCapacityTextBox.Size = new System.Drawing.Size(162, 22);
             this.RoomCapacityTextBox.TabIndex = 5;
@@ -124,7 +125,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(87, 271);
+            this.label4.Location = new System.Drawing.Point(87, 318);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 16);
             this.label4.TabIndex = 6;
@@ -133,7 +134,7 @@
             // InvigilatorComboBox
             // 
             this.InvigilatorComboBox.FormattingEnabled = true;
-            this.InvigilatorComboBox.Location = new System.Drawing.Point(236, 263);
+            this.InvigilatorComboBox.Location = new System.Drawing.Point(243, 315);
             this.InvigilatorComboBox.Name = "InvigilatorComboBox";
             this.InvigilatorComboBox.Size = new System.Drawing.Size(186, 24);
             this.InvigilatorComboBox.TabIndex = 7;
@@ -150,7 +151,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(97, 318);
+            this.label6.Location = new System.Drawing.Point(87, 375);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(82, 16);
             this.label6.TabIndex = 9;
@@ -159,10 +160,10 @@
             // ExamDateTimePicker
             // 
             this.ExamDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ExamDateTimePicker.Location = new System.Drawing.Point(236, 312);
+            this.ExamDateTimePicker.Location = new System.Drawing.Point(243, 370);
             this.ExamDateTimePicker.MinDate = new System.DateTime(2025, 11, 25, 0, 0, 0, 0);
             this.ExamDateTimePicker.Name = "ExamDateTimePicker";
-            this.ExamDateTimePicker.Size = new System.Drawing.Size(306, 22);
+            this.ExamDateTimePicker.Size = new System.Drawing.Size(224, 22);
             this.ExamDateTimePicker.TabIndex = 10;
             // 
             // SpecialPermGroupBox
@@ -171,9 +172,9 @@
             this.SpecialPermGroupBox.Controls.Add(this.label8);
             this.SpecialPermGroupBox.Controls.Add(this.label7);
             this.SpecialPermGroupBox.Controls.Add(this.StudentNameTextBox);
-            this.SpecialPermGroupBox.Location = new System.Drawing.Point(99, 510);
+            this.SpecialPermGroupBox.Location = new System.Drawing.Point(90, 540);
             this.SpecialPermGroupBox.Name = "SpecialPermGroupBox";
-            this.SpecialPermGroupBox.Size = new System.Drawing.Size(447, 128);
+            this.SpecialPermGroupBox.Size = new System.Drawing.Size(471, 136);
             this.SpecialPermGroupBox.TabIndex = 11;
             this.SpecialPermGroupBox.TabStop = false;
             this.SpecialPermGroupBox.Text = "Special Permission Details";
@@ -224,7 +225,7 @@
             // 
             this.SpecialPermissionCheckBox.AutoSize = true;
             this.SpecialPermissionCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SpecialPermissionCheckBox.Location = new System.Drawing.Point(98, 468);
+            this.SpecialPermissionCheckBox.Location = new System.Drawing.Point(90, 490);
             this.SpecialPermissionCheckBox.Name = "SpecialPermissionCheckBox";
             this.SpecialPermissionCheckBox.Size = new System.Drawing.Size(295, 20);
             this.SpecialPermissionCheckBox.TabIndex = 13;
@@ -233,9 +234,9 @@
             // 
             // ScheduleButton
             // 
-            this.ScheduleButton.Location = new System.Drawing.Point(619, 571);
+            this.ScheduleButton.Location = new System.Drawing.Point(692, 586);
             this.ScheduleButton.Name = "ScheduleButton";
-            this.ScheduleButton.Size = new System.Drawing.Size(223, 25);
+            this.ScheduleButton.Size = new System.Drawing.Size(232, 46);
             this.ScheduleButton.TabIndex = 14;
             this.ScheduleButton.Text = "Schedule The Exam Room";
             this.ScheduleButton.UseVisualStyleBackColor = true;
@@ -245,7 +246,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(96, 654);
+            this.label10.Location = new System.Drawing.Point(97, 703);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(151, 16);
             this.label10.TabIndex = 15;
@@ -255,16 +256,15 @@
             // 
             this.TotalExamHoursLabel.AutoSize = true;
             this.TotalExamHoursLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TotalExamHoursLabel.Location = new System.Drawing.Point(294, 654);
+            this.TotalExamHoursLabel.Location = new System.Drawing.Point(299, 692);
             this.TotalExamHoursLabel.Name = "TotalExamHoursLabel";
-            this.TotalExamHoursLabel.Size = new System.Drawing.Size(50, 16);
+            this.TotalExamHoursLabel.Size = new System.Drawing.Size(0, 16);
             this.TotalExamHoursLabel.TabIndex = 16;
-            this.TotalExamHoursLabel.Text = "label1";
             // 
             // ExamStartDateTimePicker
             // 
             this.ExamStartDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.ExamStartDateTimePicker.Location = new System.Drawing.Point(236, 371);
+            this.ExamStartDateTimePicker.Location = new System.Drawing.Point(243, 443);
             this.ExamStartDateTimePicker.Name = "ExamStartDateTimePicker";
             this.ExamStartDateTimePicker.Size = new System.Drawing.Size(224, 22);
             this.ExamStartDateTimePicker.TabIndex = 17;
@@ -272,7 +272,7 @@
             // ExamEndDateTimePicker
             // 
             this.ExamEndDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.ExamEndDateTimePicker.Location = new System.Drawing.Point(236, 417);
+            this.ExamEndDateTimePicker.Location = new System.Drawing.Point(692, 443);
             this.ExamEndDateTimePicker.Name = "ExamEndDateTimePicker";
             this.ExamEndDateTimePicker.Size = new System.Drawing.Size(224, 22);
             this.ExamEndDateTimePicker.TabIndex = 18;
@@ -281,7 +281,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(97, 376);
+            this.label11.Location = new System.Drawing.Point(87, 443);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(78, 16);
             this.label11.TabIndex = 19;
@@ -291,7 +291,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(97, 423);
+            this.label12.Location = new System.Drawing.Point(554, 449);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(73, 16);
             this.label12.TabIndex = 20;
@@ -301,7 +301,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(87, 22);
+            this.label13.Location = new System.Drawing.Point(87, 60);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(80, 16);
             this.label13.TabIndex = 21;
@@ -309,7 +309,7 @@
             // 
             // ExamTitleTextBox
             // 
-            this.ExamTitleTextBox.Location = new System.Drawing.Point(236, 16);
+            this.ExamTitleTextBox.Location = new System.Drawing.Point(227, 54);
             this.ExamTitleTextBox.Name = "ExamTitleTextBox";
             this.ExamTitleTextBox.Size = new System.Drawing.Size(276, 22);
             this.ExamTitleTextBox.TabIndex = 22;
@@ -321,7 +321,7 @@
             this.ExamTypeGroupBox.Controls.Add(this.FinalRadioButton);
             this.ExamTypeGroupBox.Controls.Add(this.MidTermRadioButton);
             this.ExamTypeGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExamTypeGroupBox.Location = new System.Drawing.Point(90, 58);
+            this.ExamTypeGroupBox.Location = new System.Drawing.Point(90, 113);
             this.ExamTypeGroupBox.Name = "ExamTypeGroupBox";
             this.ExamTypeGroupBox.Size = new System.Drawing.Size(868, 60);
             this.ExamTypeGroupBox.TabIndex = 25;
@@ -379,11 +379,22 @@
             this.MidTermRadioButton.UseVisualStyleBackColor = true;
             this.MidTermRadioButton.CheckedChanged += new System.EventHandler(this.MidTermRadioButton_CheckedChanged);
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(372, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(207, 25);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Schedule The Exam";
+            // 
             // BookExamRoomForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 698);
+            this.ClientSize = new System.Drawing.Size(1075, 745);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.ExamTypeGroupBox);
             this.Controls.Add(this.ExamTitleTextBox);
             this.Controls.Add(this.label13);
@@ -455,5 +466,6 @@
         private System.Windows.Forms.RadioButton SpecialRadioButton;
         private System.Windows.Forms.RadioButton FinalRadioButton;
         private System.Windows.Forms.RadioButton RetakeRadioButton;
+        private System.Windows.Forms.Label label14;
     }
 }

@@ -11,29 +11,14 @@ namespace WindowsFormsApp1.IntermediaryClasses
     {
         public string LastError { get; set; }
         ExamScheduleDataClass db = new ExamScheduleDataClass();
-        // Get Total Rooms
-        public int GetCount()
-        {
-            string queryStr = "SELECT COUNT(*) FROM Rooms;";
-            try
-            {
-                ExamScheduleDataClass db = new ExamScheduleDataClass();
-                return Convert.ToInt32(db.ExecScalarQuery(queryStr, CommandType.Text));
-            }
-            catch (Exception ex)
-            {
-                LastError = ex.Message;
-                return -1;
-            }
-        }
-
+       
         // List all rooms
         public DataTable ListRooms()
         {
             try
             {
                
-                string query = "SELECT RoomID, RoomNumber, RoomName, Capacity, Available FROM Rooms;"; // where Available=1
+                string query = "SELECT RoomID, RoomNumber, RoomName, Capacity, Available FROM Rooms;"; 
                 return db.GetTable(query, CommandType.Text);
             }
             catch (Exception ex)
@@ -84,20 +69,15 @@ namespace WindowsFormsApp1.IntermediaryClasses
             SqlParameter p = new SqlParameter("@RoomID", SqlDbType.Int) { Value = roomId };
             object result = db.ExecScalarQuery(q, CommandType.Text, p);
             return result == null ? 0 : Convert.ToInt32(result);
-        }
+        }// end GetRoomCapacity()
         // Mark room availability (requires Rooms.Available BIT column)
         public bool UpdateRoomAvailability(int roomId, bool available)
         {
             string q = "UPDATE Rooms SET Available = @Available WHERE RoomID = @RoomID";
             SqlParameter p1 = new SqlParameter("@Available", available?1:0);
             SqlParameter p2 = new SqlParameter("@RoomID", roomId);
-
-         // return db.ExecNonQuery(q, CommandType.Text, p1, p2); //if return type is int
             return db.ExecNonQuery(q, CommandType.Text, p1, p2) > 0;//if return type is bool
-        }
-        public int RemoveRoom(int roomNumber)
-        {
-            throw new NotImplementedException();
-        }
+        }// end UpdateRoomAvailability
+       
     }
 }

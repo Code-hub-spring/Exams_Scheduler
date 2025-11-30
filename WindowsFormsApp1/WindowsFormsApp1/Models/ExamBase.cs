@@ -20,12 +20,13 @@ namespace WindowsFormsApp1.Models
         public bool SpecialPermission { get; set; }
         public string SpecialStudentName { get; set; }
         public virtual double ExtraHours { get; set; } = 0;
-        //declare the override function
+       
+        //declare the override function in base class
         public virtual TimeSpan CalculateDuration(DateTime startTime, DateTime endTime)
         {
             return endTime - startTime;
-          
-        }
+
+        }// end of CalculateDuration()
 
     }
 }

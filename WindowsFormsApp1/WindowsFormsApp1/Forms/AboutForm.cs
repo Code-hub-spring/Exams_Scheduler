@@ -14,6 +14,21 @@ namespace WindowsFormsApp1.Forms
     public partial class AboutForm : Form
     {
        
+        internal static AboutForm instance;
+
+        public static AboutForm GetAboutForm()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new AboutForm();
+            }
+            return instance;
+        }
+
+        private void AboutForm_Close(object sender, EventArgs e)
+        {
+            instance = null;
+        }
         public AboutForm()
         {
             InitializeComponent();

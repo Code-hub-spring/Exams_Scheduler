@@ -18,7 +18,7 @@ namespace WindowsFormsApp1.IntermediaryClasses
 
         public DataTable GetAllInvigilators()
         {
-            string sqlString = "Select * from Invigilators;"; // where Available=1
+            string sqlString = "Select * from Invigilators;"; 
             try
             {
                 return db.GetTable(sqlString, CommandType.Text);
@@ -28,7 +28,7 @@ namespace WindowsFormsApp1.IntermediaryClasses
                     LastError = ex.Message;
                 return null;
                 }
-        }
+        }// end GetAllInvigilators()
         //method overload to get invigilators by availability
         public DataTable GetAllInvigilators(bool onlyAvailable)
         {
@@ -37,8 +37,9 @@ namespace WindowsFormsApp1.IntermediaryClasses
                 query += " WHERE Available = 1";
             return db.GetTable(query, CommandType.Text);
         }
+        // end GetAllInvigilators()
 
-        //insert invigilator data
+            //insert invigilator data
         public int InsertInvigilator(string name, bool available,string empId)
         {
             string query = "insert into Invigilators (Name, Available,InvigilatorEmpId) values(@name, @available,@empId);";
@@ -68,6 +69,6 @@ namespace WindowsFormsApp1.IntermediaryClasses
             SqlParameter p2 = new SqlParameter("@InvigilatorID", invigilatorId);
 
             return db.ExecNonQuery(q, CommandType.Text, p1, p2)>0;
-        }
+        }// end UpdateInvigilatorAvailability
     }
 }

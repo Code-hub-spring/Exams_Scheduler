@@ -12,14 +12,13 @@ namespace WindowsFormsApp1.DataClasses
 {
     internal class ExamScheduleDataClass
     {
-        //conn object
+        //connection object
         private SqlConnection ESConnection;
-        //conn string
+        //connect string
         String ESConnectionString = ConfigurationManager.ConnectionStrings["WindowsFormsApp1.Properties.Settings.ExamScheduleDB"].ConnectionString;
         
         private SqlConnection GetConnection()
         {
-            //instantiate if null, return connection
             if (ESConnection == null)
             {
                 ESConnection = new SqlConnection(ESConnectionString);
@@ -33,7 +32,7 @@ namespace WindowsFormsApp1.DataClasses
             {
                 ESConnection.Open();
             }
-        }
+        }//openConnection()
 
         private void CloseConnection()
         {
@@ -110,7 +109,7 @@ namespace WindowsFormsApp1.DataClasses
 
         public DataTable GetTable(string procNameOrQuery,CommandType cmdType, SqlParameter param1 = null, SqlParameter param2 = null, SqlParameter param3 = null, SqlParameter param4 = null, SqlParameter param5 = null, SqlParameter param6 = null, SqlParameter param7 = null, SqlParameter param8 = null, SqlParameter param9 = null, SqlParameter param10 = null, SqlParameter param11 = null, SqlParameter param12 = null, SqlParameter param13 = null)
         {
-            //load the data table
+           
             DataTable datatable = new DataTable();
             SqlDataReader datareader = null;
 
@@ -180,7 +179,6 @@ namespace WindowsFormsApp1.DataClasses
             if (param11 != null) sqlCommand.Parameters.Add(param11);
             if (param12 != null) sqlCommand.Parameters.Add(param12);
             if (param13 != null) sqlCommand.Parameters.Add(param13);
-
 
             try
             {

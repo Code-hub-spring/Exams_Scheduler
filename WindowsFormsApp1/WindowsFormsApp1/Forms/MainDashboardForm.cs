@@ -35,6 +35,7 @@ namespace WindowsFormsApp1
 
         private void addExamToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.CloseOpenedForms();
             AddExamRoomForm addExamRoomForm = new AddExamRoomForm();
             addExamRoomForm.MdiParent = this;
             addExamRoomForm.Show();
@@ -52,16 +53,15 @@ namespace WindowsFormsApp1
         {
             //create an instantance using static method and
             this.CloseOpenedForms();
-            BookExamRoomForm bookExamRoomForm =  BookExamRoomForm.GetInstance();
+            BookExamRoomForm bookExamRoomForm = BookExamRoomForm.GetInstance();
             bookExamRoomForm.MdiParent = this;
             bookExamRoomForm.Show();
 
-
         }
-
         private void viewAllSchedulesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //should call static method to create instance
+            this.CloseOpenedForms();
             ViewExamScheduleDetailsForm viewExamScheduleDetailsForm = ViewExamScheduleDetailsForm.GetViewExamScheduleDetailsFormInstance();
             viewExamScheduleDetailsForm.MdiParent= this;
              viewExamScheduleDetailsForm.Show();
@@ -87,7 +87,8 @@ namespace WindowsFormsApp1
 
         private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            AboutForm aboutForm = new AboutForm();
+            this.CloseOpenedForms();
+            AboutForm aboutForm = AboutForm.GetAboutForm();
             aboutForm.MdiParent= this;
             aboutForm.Show();
         }
@@ -103,7 +104,7 @@ namespace WindowsFormsApp1
         private void viewInvigilatorsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.CloseOpenedForms();
-            ViewInvigilatorForm viewInvigilator=new ViewInvigilatorForm();
+            ViewInvigilatorForm viewInvigilator=ViewInvigilatorForm.GetViewInvigilatorFormInstance();
             viewInvigilator.MdiParent= this;
             viewInvigilator.Show();
         }
@@ -111,7 +112,7 @@ namespace WindowsFormsApp1
         private void viewExamRoomsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.CloseOpenedForms();
-            ViewExamRoomForm viewExamRoom=new ViewExamRoomForm();
+            ViewExamRoomForm viewExamRoom= ViewExamRoomForm.GetViewExamRoomFormInstance();
             viewExamRoom.MdiParent= this;
             viewExamRoom.Show();
         }
@@ -124,5 +125,7 @@ namespace WindowsFormsApp1
                 form.Close();
             }
         } //CloseOpenedForms() end
+
+      
     }
 }

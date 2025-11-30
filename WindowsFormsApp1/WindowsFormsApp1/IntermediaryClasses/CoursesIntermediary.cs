@@ -20,7 +20,7 @@ namespace WindowsFormsApp1.IntermediaryClasses
             try
             {
                 ExamScheduleDataClass db = new ExamScheduleDataClass();
-                string query = "SELECT CourseID, CourseName,CourseNumber FROM Courses;";// where Available=True
+                string query = "SELECT CourseID, CourseName,CourseNumber FROM Courses;";
                 return db.GetTable(query, CommandType.Text);
             }
             catch (Exception ex)

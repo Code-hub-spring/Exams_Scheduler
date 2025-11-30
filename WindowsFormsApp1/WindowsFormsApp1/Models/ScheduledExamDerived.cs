@@ -18,7 +18,7 @@ namespace WindowsFormsApp1.Models
         {
             return $"{CourseName} - {ExamTitle} on {ExamDateTime.ToShortDateString()} from {ExamStartTime.ToShortTimeString()} to {ExamEndTime.ToShortTimeString()} in Room: {RoomName} (ID: {RoomID}), Invigilator: {InvigilatorName} (ID: {InvigilatorID})";
         }
-        //call the overload method to calculate duration with extra hr
+        //call the override method to calculate duration with extra hr
         public override TimeSpan CalculateDuration(DateTime startTime, DateTime endTime)
         {
            TimeSpan baseDuration = base.CalculateDuration(startTime, endTime);

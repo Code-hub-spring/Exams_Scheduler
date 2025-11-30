@@ -14,7 +14,7 @@ namespace WindowsFormsApp1.IntermediaryClasses
 internal class ExamScheduleInterMediarycs : IExamScheduleIntermediary
 {
     public string LastError { get; set; }
-    // SELECT ALL EXAMS
+    // get all exams data
     public DataTable SelectExams()
     {
         try
@@ -54,21 +54,21 @@ internal class ExamScheduleInterMediarycs : IExamScheduleIntermediary
             LastError = ex.Message;
             return null;
         }
-    }
-        // GET EXAM BY ID
+        }//end SelectExams()
+
+        // fetch exam details by its id
         public DataRow GetExamById(int examId)
         {
             ExamScheduleDataClass db = new ExamScheduleDataClass();
             SqlParameter p = new SqlParameter("@ExamID", examId);
             DataTable dt = db.GetTable("GetExamDetailsByID", CommandType.StoredProcedure, p);
-
             return dt.Rows.Count > 0 ? dt.Rows[0] : null;
-        }
-        // INSERT EXAM
+        }//end GetExamById()
+
+        // insert the exam data
         public int InsertExam(ScheduledExamDerived exam)
         {
              ExamScheduleDataClass db = new ExamScheduleDataClass();
-
              string query = @"INSERT INTO Exams
                              (CourseID, RoomID, InvigilatorID, ExamDate, ExamStartTime, ExamEndTime, DurationMinutes, SpecialNeeds, SpecialStudentName, ExtraHours, CourseName, ExamTitle,ExamType)
                              VALUES
@@ -97,10 +97,11 @@ internal class ExamScheduleInterMediarycs : IExamScheduleIntermediary
             LastError = ex.Message;
             return -1;
         }
-    }
-    // UPDATE EXAM
-    public int UpdateExam(ScheduledExamDerived exam, int examID)
-    {
+        }//end InsertExam()
+
+        
+        public int UpdateExam(ScheduledExamDerived exam, int examID)
+         {
         ExamScheduleDataClass db = new ExamScheduleDataClass();
 
         string query = @"UPDATE Exams SET
@@ -139,22 +140,24 @@ internal class ExamScheduleInterMediarycs : IExamScheduleIntermediary
             LastError = ex.Message;
             return -1;
         }
-    }
-    // DELETE EXAM
-    public int DeleteExam(int examId, int roomId, int invigilatorId)
-    {
-        ExamScheduleDataClass db = new ExamScheduleDataClass();
-        SqlParameter p1 = new SqlParameter("@ExamID", examId);
-        SqlParameter p2 = new SqlParameter("@RoomID", roomId);
-        SqlParameter p3 = new SqlParameter("@InvigilatorID", invigilatorId);
-        return db.ExecNonQuery("CancelExam", CommandType.StoredProcedure, p1, p2, p3);
-    }
-    // SELECT EXAM IDS
-    public DataTable SelectExamIDs()
-    {
-        ExamScheduleDataClass db = new ExamScheduleDataClass();
-        string q = "SELECT ExamID, ExamTitle FROM Exams ORDER BY ExamID DESC";
-        return db.GetTable(q, CommandType.Text);
-    }
-    }// ExamScheduleInterMediarycs
+        }// end of  UpdateExam
+        
+        // DELETE EXAM
+        public int DeleteExam(int examId, int roomId, int invigilatorId)
+        {
+            ExamScheduleDataClass db = new ExamScheduleDataClass();
+            SqlParameter p1 = new SqlParameter("@ExamID", examId);
+            SqlParameter p2 = new SqlParameter("@RoomID", roomId);
+            SqlParameter p3 = new SqlParameter("@InvigilatorID", invigilatorId);
+            return db.ExecNonQuery("CancelExam", CommandType.StoredProcedure, p1, p2, p3);
+        }//end of DeleteExam()
+       
+        // select exam Id andn exam title
+        public DataTable SelectExamIDs()
+        {
+            ExamScheduleDataClass db = new ExamScheduleDataClass();
+            string q = "SELECT ExamID, ExamTitle FROM Exams ORDER BY ExamID DESC";
+            return db.GetTable(q, CommandType.Text);
+            }// end of SelectExamIDs()
+        }// ExamScheduleInterMediarycs
 }// namespace

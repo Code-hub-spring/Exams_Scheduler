@@ -24,7 +24,7 @@ namespace WindowsFormsApp1
         }
         private void AddExamRoomForm_Close(object sender, FormClosingEventArgs e)
         {
-            //When the form closes, make the instance null, so the form loads again when called the second time.
+            //When the form closes, make the instance null
             addExamRoomInstance = null;
         } //AddExamRoomFormClosing() end 
          
@@ -51,6 +51,7 @@ namespace WindowsFormsApp1
                                 if (result > 0)
                                 {
                                     MessageBox.Show("Room added successfully!");
+                                    resultLabel.Text = "Room added successfully!";
                                     ClearForm();
                                 }
                                 else
